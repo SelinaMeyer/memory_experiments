@@ -21,7 +21,8 @@ if not user:
                     <br>You should carefully read the information below. Please take as much time as you need to read the consent form. 
 <h2>1. Purpose and Goal of this Research
 <p>The purpose of the research project is to identify the dynamics at play in the proliferation of information online. 
-                    <br>The goal of this study is to explore to which extent certain linguistic features affect memorability and truthfulness judgements of news headlines. Your participation will help us achieve this goal. The results of this research may be presented at scientific or professional meetings or published in scientific proceedings and journals. 
+                    The goal of this study is to explore to which extent certain linguistic features affect memorability and truthfulness judgements of news headlines. 
+                    <br>Your participation will help us achieve this goal. The results of this research may be presented at scientific or professional meetings or published in scientific proceedings and journals. 
 <h2>2. Participation and Compensation
 <p>Your participation in this online study is completely voluntary. You will be one of approximately 60 people being surveyed for this research. You will receive 4 GBP as compensation for your participation. 
                     <br>You may withdraw and discontinue participation at any time without penalty or losing the compensation. You may refuse to answer any questions you do not want to answer. 
@@ -44,13 +45,13 @@ if not user:
                     As with any publication or online related activity, the risk of a breach of confidentiality is always possible. 
                     According to the GDPR, the researchers will inform the participant if a breach of confidential data was detected. 
 <h2>6. Identification of Investigators
-<p>If you have any questions or concerns about the research, please feel free to contact: 
-                    Dr. Selina Meyer 
-                    selina.meyer@utn.de 
-                    Natural Language Understanding Lab 
-                    Department of Computer Science and Artificial Intelligence 
-                    University of Technology Nuremberg 
-                    Germany 
+<p>If you have any questions or concerns about the research, please feel free to contact: <br>
+                    Dr. Selina Meyer <br>
+                    selina.meyer@utn.de <br>
+                    Natural Language Understanding Lab <br>
+                    Department of Computer Science and Artificial Intelligence <br>
+                    University of Technology Nuremberg <br>
+                    Germany <br>
 <p>By clicking the button below and entering your prolific ID, you agree to participate in this experiment and give your consent to the use of your data for research purposes. 
 """)
     
