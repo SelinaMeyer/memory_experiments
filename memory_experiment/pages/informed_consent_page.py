@@ -3,12 +3,45 @@ from core.scripts import user_repository, database_repository
 from captcha.image import ImageCaptcha
 import random, string
 
-length_captcha = 6
+length_captcha = 4
 width = 200
 height = 150
 target_id = st.session_state.user_id
 user = user_repository.get_user(target_id)
 task = st.session_state.task
+
+hide_streamlit_style = """
+                <style>
+                div[data-testid="stToolbar"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stDecoration"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stStatusWidget"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                #MainMenu {
+                visibility: hidden;
+                height: 0%;
+                }
+                header {
+                visibility: hidden;
+                height: 0%;
+                }
+                footer {
+                visibility: hidden;
+                height: 0%;
+                }
+                </style>
+                """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 if not user:
         with st.container():
@@ -27,17 +60,16 @@ if not user:
 <p>Your participation in this online study is completely voluntary. You will be one of approximately 60 people being surveyed for this research. You will receive 4 GBP as compensation for your participation. 
                     <br>You may withdraw and discontinue participation at any time without penalty or losing the compensation. You may refuse to answer any questions you do not want to answer. 
 <h2>3. Procedure
-<p>After confirming your informed consent you will: 1. Be presented with 16 news headlines one after another with the task to memorize them as well as possible. 
-                    <br>2. In the next step, you will be tasked to recall as many headlines as possible from memory. 
-                    <br>3. You will be shown headlines again, and tasked to decide whether they have previously seen the headline or not. 
-                    <br>4. You will be shown headlines a third time and asked to judge their perceived truthfulness of the headlines. 
-                    <br>5. You will be asked answer demographic questions The complete procedure of this online study will last approximately 20 minutes. 
+<p>In this study, your initial task will be to read and memorize news headlines. 
+                    You will then be asked to remember the headlines and to subjectively judge and rate the headlines. 
+                    Finally, you will be asked to provide some basic demographic information about yourself. 
+                    It should take about 20 minutes to complete the full study.
 <h2>4. Risks and Benefits
 <p>There are no risks associated with this online study. Discomforts or inconveniences will be minor and are not likely to happen. 
                     If any discomforts become a problem, you may discontinue your participation. Your benefit in participating is your compensation of 4 GBP. 
 <h2>5. Data Protection and Confidentiality
-<p>Personal data (age, gender, etc.) will be recorded while participation.
-                    The researcher will not identify you by your real name in any reports using information obtained from this online study and that your confidentiality as a participant in this online study will remain secure and encrypted. 
+<p>Some personal data (gender, political affiliation, etc.) will be recorded while participation. You have the option not to answer any demographic questions you do not want to answer.
+                    No personally identifiable information such as your name, address, or email address will be recorded.
                     All data you provide in this online study will be published anonymized and treated confidentially in compliance with the General Data Protection Regulation (GDPR) of the European Union (EU). 
                     Subsequent uses of records and data will be subject to standard data use policies which protect the full anonymity of the participating individuals. 
                     In all cases, uses of records and data will be subject to the GDPR. 
@@ -56,8 +88,10 @@ if not user:
 """)
     
             prolific_id = st.text_input("Prolific ID:", max_chars=200)
-            agree = st.checkbox("I have read and understood the information above and agree to participate in this experiment")
-        if prolific_id and agree:
+            agree = st.radio(label="Do you agree to the above information?",label_visibility="hidden",options=["I have read and understood the information above and agree to participate in this experiment", "I do not agree to participate in this experiment"], index=None, key="informed_consent")
+        if agree == "I do not agree to participate in this experiment":
+            st.warning("If you do not want to participate, please close the window and return the experiment on Prolific.")
+        if prolific_id and agree=="I have read and understood the information above and agree to participate in this experiment":
             if "captcha_control" not in st.session_state:
                 print("adding captcha control to session state")
                 st.session_state.captcha_control = False

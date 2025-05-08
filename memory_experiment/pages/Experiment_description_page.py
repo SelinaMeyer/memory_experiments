@@ -1,13 +1,43 @@
 import streamlit as st
 
-st.html("""<p>In the following, you will see some news headlines one after the other. Each headline is presented for 7 seconds. 
-        
-        <br>Please read each headline carefully and try to memorize them as well as possible. 
-        
-        <br>Do not use any external tools to help you memorize the headlines as it is important for us to get an accurate understanding of participants' memory performance.
-        <br>Your reward is not affected by the number of items you remember.
-        
-        <br>The first headline will be presented once you click the "Start Experiment" button below.""")
+hide_streamlit_style = """
+                <style>
+                div[data-testid="stToolbar"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stDecoration"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stStatusWidget"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                #MainMenu {
+                visibility: hidden;
+                height: 0%;
+                }
+                header {
+                visibility: hidden;
+                height: 0%;
+                }
+                footer {
+                visibility: hidden;
+                height: 0%;
+                }
+                </style>
+                """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
+st.html("""<p>In the following, you will see some news headlines. The headlines will be presented back-to-back, one after the other. Each headline will be presented for 7 seconds. Please read each headline carefully and try to memorize the headline as best as you can.  
+        <p><b>Important</b>: Please do not use any external tools to record or write down the headlines. We are interested in how memorable the headlines are for you, relying on nothing but your own memory. 
+        <br>Please note that your reward is in no way dependent on how many headlines you may or may not be able to memorize. Thank you for your cooperation!
+        <p><b>Please do not use any browser navigation buttons (like "back" or "refresh") during the study. Doing so will restart the study and interfere with your ability to complete it.</b>
+        <p>Are you ready to start the study? <br>The first headline will be presented once you click the "Start Experiment" button below.""")
 
 if st.button("Start Experiment", key="start_experiment_button"):
     st.switch_page("memory_experiment/pages/presentation_page.py")
