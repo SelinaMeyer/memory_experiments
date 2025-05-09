@@ -51,7 +51,7 @@ if st.button("Submit"):
     if recall is None or recall == "":
         st.warning("Please write down at least one headline before submitting."
         "If you don't remember the exact wording of any headlines, try to write down as much as you remember")
-    elif time.time() - st.session_state.recall_start_time < 60: # change to 300
+    elif time.time() - st.session_state.recall_start_time < 300: # change to 300
         if "recall_submit_attempts" not in st.session_state:
             st.session_state.recall_submit_attempts = 1
             st.warning("Please take your time to write down the headlines. You have 5 minutes for this task.")
