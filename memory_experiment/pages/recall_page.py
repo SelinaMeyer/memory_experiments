@@ -48,7 +48,7 @@ if "recall_start_time" not in st.session_state:
 recall_dict = {}
 
 if st.button("Submit"):
-    if recall is None:
+    if recall is None or recall == "":
         st.warning("Please write down at least one headline before submitting."
         "If you don't remember the exact wording of any headlines, try to write down as much as you remember")
     elif time.time() - st.session_state.recall_start_time < 60: # change to 300
