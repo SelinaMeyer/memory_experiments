@@ -3,6 +3,39 @@ from core.scripts import user_repository
 import time
 from datetime import datetime
 
+hide_streamlit_style = """
+                <style>
+                div[data-testid="stToolbar"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stDecoration"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stStatusWidget"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                #MainMenu {
+                visibility: hidden;
+                height: 0%;
+                }
+                header {
+                visibility: hidden;
+                height: 0%;
+                }
+                footer {
+                visibility: hidden;
+                height: 0%;
+                }
+                </style>
+                """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
 political_labels = {
     0: "1 - left",
     1: "2",
@@ -18,7 +51,7 @@ with st.form("Please provide the following information about yourself:"):
     gender = st.radio("How do you describe your current gender identity?", ["Man", "Woman",
                                                                              "Non-binary", "Prefer to self-describe"],index=None, key="gender")
     
-    self_gender = st.text_input("If you selected \"Prefer to self-describe\" above, lease specify your gender identity")
+    self_gender = st.text_input("If you selected \"Prefer to self-describe\" above, please specify your gender identity")
     education = st.radio("What's your highest education level?", ["Less than high school", "high school degree/GED", "some college but no degree", 
                                                                   "Bachelor's degree (4 year)", "Associate degree (2-year)",
                                                                   "Master's degree", "Doctoral degree", "Professional degree (JD, MD)"],index=None, key="education")
@@ -44,7 +77,7 @@ with st.form("Please provide the following information about yourself:"):
     podcast = st.segmented_control("Podcasts", ["Not at all", "Once a week", "More than once a week", "Once a day", "More than once a day"], key="podcast")
     
     difficulty = st.segmented_control("How difficult was this study to complete?", ["1 (very difficult)", "2", "3", "4", "5 (very easy)"],key="difficulty")
-    study_description = st.text_area("Please describe in one or two sentences what this study was about, in your own opinion.", key="study_description", height=100)
+    study_description = st.text_area("Please describe in one or two sentences what this study was about, in your own opinion:", key="study_description", height=100)
     further_comments = st.text_area("If you have any further comments on the study, please feel free to provide them here:", key="further_comments", height=100)
     submitted = st.form_submit_button("Submit")
 if submitted:
