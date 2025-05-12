@@ -33,7 +33,7 @@ hide_streamlit_style = """
                 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
-st.html("""<p>In the following, you will see some news headlines. The headlines will be presented back-to-back, one after the other. Each headline will be presented for 7 seconds. Please read each headline carefully and try to memorize the headline as best as you can.  
+st.html("""<p>In the following, you will see some news headlines. The headlines will be presented back-to-back, one after the other. Each headline will be presented for 10 seconds. Please read each headline carefully and try to memorize the headline as best as you can.  
         <p><b>Important</b>: Please do not use any external tools to record or write down the headlines. We are interested in how memorable the headlines are for you, relying on nothing but your own memory. 
         <br>Please note that your reward is in no way dependent on how many headlines you may or may not be able to memorize. Thank you for your cooperation!
         <p><b>Please do not use any browser navigation buttons (like "back" or "refresh") during the study. Doing so will restart the study and interfere with your ability to complete it.</b>
