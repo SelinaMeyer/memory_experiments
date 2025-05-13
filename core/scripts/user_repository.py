@@ -76,6 +76,48 @@ def update_demographics(user_id: str, new_data: dict):
     """, (json.dumps(existing_data), user_id))
     conn.commit()
     # conn.close()
+
+def update_annotation(user_id: str, sample_id,  cred_rating: int):
+    """
+    Update the demographic data of the user with the given user id.
+
+    :param user_id: ID-string of user
+    :param new_data: New demographic data to be merged into the existing data.
+    :return: None
+    """
+    conn = st.session_state.conn
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT annotations FROM user_data WHERE user_id = %s", (user_id,))
+    result = cursor.fetchone()
+
+    if not result or not result[0]:
+        raise ValueError(f"No data found for user_id={user_id}")
+
+    data = result[0]
+
+    print("Annotations:", data)
+
+    # Step 2: Navigate to annotations["recognition"]
+    recognition_list = data.get("recognition", [])
+
+    print("Recognition: ", recognition_list)
+
+    for entry in recognition_list:
+        if entry.get("sample_id") == sample_id:
+            entry["credibility_rating"] = cred_rating
+            break
+
+    # Step 3: Update the data structure
+    data["recognition"] = recognition_list
+
+    # Step 4: Save back to the database
+    print("Updated:", data["recognition"])
+    cursor.execute(
+        "UPDATE user_data SET annotations = %s WHERE user_id = %s",
+        (json.dumps(data), user_id)
+    )
+    conn.commit()
     
 def save_one_annotation(user_id: str, key: str, question_index: int, question_annotation: dict):
     """
