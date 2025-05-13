@@ -11,9 +11,9 @@
         "topic": "distraction",
         "source": "none",
         "contains_pronoun": 2,
-        "avg_word_length": NaN,
-        "perc_long_words": NaN,
-        "num_long_words": NaN
+        "avg_word_length": 4.62,
+        "perc_long_words": 0.15,
+        "num_long_words": 2
     },
     "2": {
         "headline": "This is an attention test. Please select 4.",
@@ -27,9 +27,9 @@
         "topic": "distraction",
         "source": "none",
         "contains_pronoun": 2,
-        "avg_word_length": NaN,
-        "perc_long_words": NaN,
-        "num_long_words": NaN
+        "avg_word_length": 4.5,
+        "perc_long_words": 0.12,
+        "num_long_words": 1
     },
     "3": {
         "headline": "Jonathan Majors reportedly admits to being \u2018aggressive\u2019 with ex-girlfriend in newly released audio clip",
@@ -43,7 +43,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 6.43,
         "perc_long_words": 0.36,
-        "num_long_words": 5.0
+        "num_long_words": 5
     },
     "4": {
         "headline": "Leighton Meester is joining husband Adam Brody on Season 2 of \u2018Nobody Wants This\u2019",
@@ -57,7 +57,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 4.86,
         "perc_long_words": 0.36,
-        "num_long_words": 5.0
+        "num_long_words": 5
     },
     "5": {
         "headline": "The Sex Pistols announce first North American tour in 2 decades",
@@ -71,7 +71,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 4.82,
         "perc_long_words": 0.36,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "6": {
         "headline": "Betty White, TV's Golden Girl, celebrated at stamp ceremony in Los Angeles",
@@ -85,7 +85,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.25,
         "perc_long_words": 0.25,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "7": {
         "headline": "Sarah Snook takes on Oscar Wilde in a dazzling Broadway debut",
@@ -99,7 +99,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 4.64,
         "perc_long_words": 0.18,
-        "num_long_words": 2.0
+        "num_long_words": 2
     },
     "8": {
         "headline": "Kennedy Center guts social impact team; more layoffs expected",
@@ -113,7 +113,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.89,
         "perc_long_words": 0.33,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "9": {
         "headline": "Selena's killer Yolanda Saldi\u0301var denied parole 30 years after murder",
@@ -127,7 +127,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 6.0,
         "perc_long_words": 0.3,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "10": {
         "headline": "Megan Fox, Machine Gun Kelly reveal birth of daughter",
@@ -141,7 +141,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.0,
         "perc_long_words": 0.22,
-        "num_long_words": 2.0
+        "num_long_words": 2
     },
     "11": {
         "headline": "\u2018Last of Us\u2019 star Bella Ramsey reveals autism diagnosis.",
@@ -155,7 +155,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.33,
         "perc_long_words": 0.22,
-        "num_long_words": 2.0
+        "num_long_words": 2
     },
     "12": {
         "headline": "Chris Hemsworth, Paul Rudd and others will reprise their Marvel roles in next \u2018Avengers\u2019 movie",
@@ -169,7 +169,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.33,
         "perc_long_words": 0.2,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "13": {
         "headline": "\u2018Cobra Kai\u2019 costars Mary Mouser and Tanner Buchanan are engaged, as their series ends",
@@ -183,7 +183,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.14,
         "perc_long_words": 0.21,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "14": {
         "headline": "Damon Wayans Sr. Reveals He 'Fell in Love' with His Nephew's Ex-Girlfriend",
@@ -197,7 +197,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.25,
         "perc_long_words": 0.25,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "15": {
         "headline": "Halle Berry Grateful That Chris Hemsworth \u201cStood Up For Her\u201d On Set Of Thriller \u2018Crime 101\u2019",
@@ -211,7 +211,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 4.75,
         "perc_long_words": 0.19,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "16": {
         "headline": "\u201cLove Is Blind \u201dAlums Amber and Matt Barnett Welcome Their First Baby, a Girl.",
@@ -225,7 +225,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 4.64,
         "perc_long_words": 0.14,
-        "num_long_words": 2.0
+        "num_long_words": 2
     },
     "17": {
         "headline": "Hugh Grant Calls Out \u2018Creepy\u2019 Airport Officer over \u2018Intrusive\u2019 Encounter with His Children at Heathrow",
@@ -239,7 +239,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.87,
         "perc_long_words": 0.47,
-        "num_long_words": 7.0
+        "num_long_words": 7
     },
     "18": {
         "headline": "Tori Spelling Reveals Sex Tape With Dean McDermott Almost Leaked After Friend Stole It From Their Home",
@@ -253,7 +253,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.06,
         "perc_long_words": 0.18,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "19": {
         "headline": "New design revealed for Airbus hydrogen plane",
@@ -267,7 +267,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.57,
         "perc_long_words": 0.29,
-        "num_long_words": 2.0
+        "num_long_words": 2
     },
     "20": {
         "headline": "\u2018Like wildfires underwater\u2019: Worst summer on record for Great Barrier Reef as coral die-off sweeps planet",
@@ -281,7 +281,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.62,
         "perc_long_words": 0.25,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "21": {
         "headline": "Scientists discover concerning new source of \u2018forever chemicals\u2019 in drinking water",
@@ -295,7 +295,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 6.55,
         "perc_long_words": 0.55,
-        "num_long_words": 6.0
+        "num_long_words": 6
     },
     "22": {
         "headline": "In 15 Years, 80,000 Homes in the New York Area May Be Lost to Flooding",
@@ -309,7 +309,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 3.73,
         "perc_long_words": 0.07,
-        "num_long_words": 1.0
+        "num_long_words": 1
     },
     "23": {
         "headline": "Methane Reduction Is A Business Win For Food Companies",
@@ -323,7 +323,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.11,
         "perc_long_words": 0.44,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "24": {
         "headline": "Microplastics could be affecting the weather, new study shows",
@@ -337,7 +337,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.89,
         "perc_long_words": 0.33,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "25": {
         "headline": "Water shortage threatens the world's most abundant lithium reserves",
@@ -351,7 +351,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 6.56,
         "perc_long_words": 0.67,
-        "num_long_words": 6.0
+        "num_long_words": 6
     },
     "26": {
         "headline": "Trump exempts nearly 70 coal plants from Biden-era rule on mercury and other toxic air pollution",
@@ -365,7 +365,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.06,
         "perc_long_words": 0.25,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "27": {
         "headline": "A forest the size of Mexico could store twice as much carbon as was thought. That makes its conservation even more valuable",
@@ -379,7 +379,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 4.64,
         "perc_long_words": 0.14,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "28": {
         "headline": "Scientists find huge trove of rare metals needed for clean energy hidden inside toxic coal waste",
@@ -393,7 +393,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.06,
         "perc_long_words": 0.06,
-        "num_long_words": 1.0
+        "num_long_words": 1
     },
     "29": {
         "headline": "Solar storm could bring auroras farther south over the US than they typically appear",
@@ -407,7 +407,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.07,
         "perc_long_words": 0.21,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "30": {
         "headline": "Your daily cup of coffee could get more expensive because of climate change",
@@ -421,7 +421,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 4.85,
         "perc_long_words": 0.23,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "31": {
         "headline": "India Sees a Future Making Solar Panels for Itself, and Maybe the World",
@@ -433,9 +433,9 @@
         "topic": "environment",
         "source": "nytimes",
         "contains_pronoun": 1,
-        "avg_word_length": 5.73,
-        "perc_long_words": 0.27,
-        "num_long_words": 3.0
+        "avg_word_length": 4.54,
+        "perc_long_words": 0.08,
+        "num_long_words": 1
     },
     "32": {
         "headline": "\u2018We Hear You, Mr. President\u2019: The World Lines Up to Buy American Gas",
@@ -449,7 +449,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 4.31,
         "perc_long_words": 0.15,
-        "num_long_words": 2.0
+        "num_long_words": 2
     },
     "33": {
         "headline": "Farmers Sued Over Deleted Climate Data. So the Government Will Put It Back.",
@@ -461,9 +461,9 @@
         "topic": "environment",
         "source": "nytimes",
         "contains_pronoun": 1,
-        "avg_word_length": 4.92,
-        "perc_long_words": 0.23,
-        "num_long_words": 3.0
+        "avg_word_length": 4.85,
+        "perc_long_words": 0.31,
+        "num_long_words": 4
     },
     "34": {
         "headline": "Hawaii plans to increase hotel tax to help it cope with climate change",
@@ -475,9 +475,9 @@
         "topic": "environment",
         "source": "nbcnews",
         "contains_pronoun": 1,
-        "avg_word_length": 3.93,
-        "perc_long_words": 0.14,
-        "num_long_words": 2.0
+        "avg_word_length": 4.46,
+        "perc_long_words": 0.15,
+        "num_long_words": 2
     },
     "35": {
         "headline": "They\u2019re up to 70% of the American diet. But the US has no policy on ultraprocessed foods",
@@ -491,7 +491,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 4.24,
         "perc_long_words": 0.18,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "36": {
         "headline": "Being aerobically fit in middle age may reduce Alzheimer\u2019s and dementia risk, study says",
@@ -505,7 +505,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.36,
         "perc_long_words": 0.21,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "37": {
         "headline": "Rare virus that killed Gene Hackman's wife linked to 3 deaths in California town",
@@ -519,7 +519,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 4.79,
         "perc_long_words": 0.14,
-        "num_long_words": 2.0
+        "num_long_words": 2
     },
     "38": {
         "headline": "Not even wealth is saving Americans from dying at rates seen among some of the poorest Europeans",
@@ -533,7 +533,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 4.71,
         "perc_long_words": 0.18,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "39": {
         "headline": "FDA recalls thousands of pounds of ground coffee mislabeled as decaffeinated",
@@ -547,7 +547,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 6.0,
         "perc_long_words": 0.36,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "40": {
         "headline": "Two Liquid Egg Brands Recalled Over Bleach Contamination Risk",
@@ -561,7 +561,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.89,
         "perc_long_words": 0.22,
-        "num_long_words": 2.0
+        "num_long_words": 2
     },
     "41": {
         "headline": "Shingles Vaccine Can Decrease Risk of Dementia, Study Finds",
@@ -575,7 +575,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.67,
         "perc_long_words": 0.44,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "42": {
         "headline": "Utah Becomes First State to Ban Fluoride in Public Water",
@@ -589,7 +589,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 4.7,
         "perc_long_words": 0.2,
-        "num_long_words": 2.0
+        "num_long_words": 2
     },
     "43": {
         "headline": "Tiny shards of plastic are increasingly infiltrating our brains, study says",
@@ -603,7 +603,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.91,
         "perc_long_words": 0.36,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "44": {
         "headline": "Exercise may help you store fat better, new research suggests",
@@ -617,7 +617,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.2,
         "perc_long_words": 0.4,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "45": {
         "headline": "Your employer may start covering weight-loss drugs soon",
@@ -631,7 +631,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 6.0,
         "perc_long_words": 0.38,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "46": {
         "headline": "John Cena reveals past skin cancer diagnosis: 'That phone call's not one you want to get'",
@@ -645,7 +645,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 4.62,
         "perc_long_words": 0.12,
-        "num_long_words": 2.0
+        "num_long_words": 2
     },
     "47": {
         "headline": "Transgender patients and their health providers fear worsening discrimination",
@@ -659,7 +659,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 7.67,
         "perc_long_words": 0.56,
-        "num_long_words": 5.0
+        "num_long_words": 5
     },
     "48": {
         "headline": "Dave Coulier says he finished chemo and shares update on prognosis",
@@ -673,7 +673,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.09,
         "perc_long_words": 0.27,
-        "num_long_words": 3.0
+        "num_long_words": 3
     },
     "49": {
         "headline": "Your Weed Habit May Be Messing With Your Sperm",
@@ -687,7 +687,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 4.22,
         "perc_long_words": 0.11,
-        "num_long_words": 1.0
+        "num_long_words": 1
     },
     "50": {
         "headline": "What you eat in midlife affects how healthy you are at age 70, according to a new study",
@@ -701,7 +701,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 3.89,
         "perc_long_words": 0.22,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "51": {
         "headline": "Justice Department places attorney who struggled to explain Maryland man's deportation on leave",
@@ -715,7 +715,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 6.38,
         "perc_long_words": 0.54,
-        "num_long_words": 7.0
+        "num_long_words": 7
     },
     "52": {
         "headline": "Head Start funding lags by nearly $1 billion this year, causing some preschool closures",
@@ -729,7 +729,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.29,
         "perc_long_words": 0.36,
-        "num_long_words": 5.0
+        "num_long_words": 5
     },
     "53": {
         "headline": "Kennedy\u2019s Plan to Send Health Officials to \u2018Indian Country\u2019 Angers Native Leaders",
@@ -743,7 +743,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.83,
         "perc_long_words": 0.42,
-        "num_long_words": 5.0
+        "num_long_words": 5
     },
     "54": {
         "headline": "Tentative deal is reached in Republican fight over proxy voting for new parents",
@@ -757,7 +757,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.15,
         "perc_long_words": 0.31,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "55": {
         "headline": "Jailed Istanbul Mayor Imamoglu's X account blocked in Turkey",
@@ -769,9 +769,9 @@
         "topic": "politics",
         "source": "yahoo",
         "contains_pronoun": 0,
-        "avg_word_length": 6.8,
-        "perc_long_words": 0.6,
-        "num_long_words": 6.0
+        "avg_word_length": 5.78,
+        "perc_long_words": 0.44,
+        "num_long_words": 4
     },
     "56": {
         "headline": "Trump administration halts Biden proposal to let Medicare, Medicaid cover anti-obesity drugs",
@@ -785,7 +785,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 6.75,
         "perc_long_words": 0.42,
-        "num_long_words": 5.0
+        "num_long_words": 5
     },
     "57": {
         "headline": "US Army engineers decide to fast-track Great Lakes tunnel permits under Trump energy emergency order",
@@ -799,7 +799,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 5.73,
         "perc_long_words": 0.27,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "58": {
         "headline": "Visas revoked for students at universities in Southern states amid crackdown",
@@ -813,7 +813,7 @@
         "contains_pronoun": 0,
         "avg_word_length": 6.0,
         "perc_long_words": 0.45,
-        "num_long_words": 5.0
+        "num_long_words": 5
     },
     "59": {
         "headline": "CIA is reviewing its authorities to use lethal force against drug cartels",
@@ -827,7 +827,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.17,
         "perc_long_words": 0.33,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "60": {
         "headline": "Doug Emhoff among those fired from Holocaust Museum board by Trump",
@@ -839,9 +839,9 @@
         "topic": "politics",
         "source": "politico",
         "contains_pronoun": 1,
-        "avg_word_length": 5.79,
-        "perc_long_words": 0.29,
-        "num_long_words": 4.0
+        "avg_word_length": 5.09,
+        "perc_long_words": 0.09,
+        "num_long_words": 1
     },
     "61": {
         "headline": "Josh Shapiro says Trump called him a week after arson attack on governor's residence",
@@ -853,9 +853,9 @@
         "topic": "politics",
         "source": "nbcnews",
         "contains_pronoun": 1,
-        "avg_word_length": 5.14,
-        "perc_long_words": 0.14,
-        "num_long_words": 2.0
+        "avg_word_length": 5.07,
+        "perc_long_words": 0.21,
+        "num_long_words": 3
     },
     "62": {
         "headline": "Elon Musk reveals new strategies to save Tesla from 'ugly' financial woes: 'I remain extremely optimistic'",
@@ -867,9 +867,9 @@
         "topic": "politics",
         "source": "nbcnews",
         "contains_pronoun": 1,
-        "avg_word_length": 4.68,
-        "perc_long_words": 0.16,
-        "num_long_words": 3.0
+        "avg_word_length": 5.69,
+        "perc_long_words": 0.31,
+        "num_long_words": 5
     },
     "63": {
         "headline": "Brazil's Bolsonaro leads rally in support of amnesty law as he faces trial for alleged coup plot",
@@ -883,7 +883,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 4.71,
         "perc_long_words": 0.29,
-        "num_long_words": 5.0
+        "num_long_words": 5
     },
     "64": {
         "headline": "President of El Salvador says he won't return mistakenly deported man to U.S.",
@@ -897,7 +897,7 @@
         "contains_pronoun": 1,
         "avg_word_length": 5.0,
         "perc_long_words": 0.31,
-        "num_long_words": 4.0
+        "num_long_words": 4
     },
     "65": {
         "headline": "Congress needs to address debt ceiling before its August recess to prevent default, Treasury secretary says",
@@ -909,9 +909,9 @@
         "topic": "politics",
         "source": "nytimes",
         "contains_pronoun": 1,
-        "avg_word_length": 4.73,
-        "perc_long_words": 0.27,
-        "num_long_words": 3.0
+        "avg_word_length": 5.75,
+        "perc_long_words": 0.44,
+        "num_long_words": 7
     },
     "66": {
         "headline": "US warns that if Sunday Iran talks aren\u2019t productive, \u2018they won\u2019t continue\u2019",
@@ -923,8 +923,8 @@
         "topic": "politics",
         "source": "nytimes",
         "contains_pronoun": 1,
-        "avg_word_length": 5.09,
-        "perc_long_words": 0.27,
-        "num_long_words": 3.0
+        "avg_word_length": 5.33,
+        "perc_long_words": 0.17,
+        "num_long_words": 2
     }
 }
