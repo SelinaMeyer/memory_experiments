@@ -101,12 +101,15 @@ def update_annotation(user_id: str, sample_id,  cred_rating: str):
     # Step 2: Navigate to annotations["recognition"]
     recognition_list = data.get("recognition", [])
 
-    print("Recognition: ", recognition_list)
-
-    for entry in recognition_list:
-        if entry.get("sample_id") == sample_id:
-            entry["credibility_rating"] = cred_rating
-            break
+    if sample_id == 2: # if item is attention test
+        recognition_list.append({"headline": "This is an attention test. Please select 4.", 
+                     "sample_id": sample_id, "credibility_rating": cred_rating})
+    
+    else:
+        for entry in recognition_list:
+            if entry.get("sample_id") == sample_id:
+                entry["credibility_rating"] = cred_rating
+                break
 
     # Step 3: Update the data structure
     data["recognition"] = recognition_list
