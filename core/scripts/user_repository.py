@@ -77,7 +77,7 @@ def update_demographics(user_id: str, new_data: dict):
     conn.commit()
     # conn.close()
 
-def update_annotation(user_id: str, sample_id,  cred_rating: int):
+def update_annotation(user_id: str, sample_id,  cred_rating: str):
     """
     Update the demographic data of the user with the given user id.
 

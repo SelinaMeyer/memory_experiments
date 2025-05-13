@@ -83,7 +83,7 @@ if show_next:
     else:
         print("key:", key)
         print("response:", user_response)
-        if int(key) == 2:
+        if int(key) == 2: # if item is attention test
             sample_response = {}
             sample_response["sample_id"] = int(key)
             sample_response["seen_in_presentation"] = True if st.session_state.user[3] == samples[key]["grouping"] else False
