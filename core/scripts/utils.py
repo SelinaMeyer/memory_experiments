@@ -51,7 +51,7 @@ TASK_INFO = {
 
     "memory_experiment": {
         "annotation_filepath": "memory_experiment/resources/headlines_120525.json",
-        "number_of_annotator_groups": 4,
+        "number_of_annotator_groups": 2,
     }
 }
 
