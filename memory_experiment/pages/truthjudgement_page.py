@@ -83,7 +83,19 @@ if show_next:
     else:
         print("key:", key)
         print("response:", user_response)
-        user_repository.update_annotation(st.session_state.user_id, int(key), user_response)
+        if int(key) == 2:
+            sample_response = {}
+            sample_response["sample_id"] = int(key)
+            sample_response["seen_in_presentation"] = True if st.session_state.user[3] == samples[key]["grouping"] else False
+            sample_response["headline"] = samples[key]["headline"]
+            sample_response["contains_pronoun"] = samples[key]["contains_pronoun"]
+            sample_response["avg_word_length"] = samples[key]["avg_word_length"]
+            sample_response["perc_long_words"] = samples[key]["perc_long_words"]
+            sample_response["num_long_words"] = samples[key]["num_long_words"]
+            sample_response["credibility_rating"] = user_response
+            user_repository.save_one_annotation(st.session_state.user_id, "recognition", int(key), sample_response)
+        else:
+            user_repository.update_annotation(st.session_state.user_id, int(key), user_response)
         #key = st.session_state.shuffled_keys[st.session_state.index]
         #placeholder.write(samples[key]["headline"])
         st.session_state.index += 1
