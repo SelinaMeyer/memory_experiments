@@ -37,16 +37,23 @@ hide_streamlit_style = """
                 </style>
                 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
-
+progression_data = {}
 st.html("""<p>Below, you will again see some news headlines on the screen, one after the other. 
          <br>You might have seen some of them before during this experiment, others are new.
          <p>For each headline, please indicate whether it is a headline you have seen in the initial memorization task or a new headline you have not seen in the memorization task.""")
 
+user_repository.set_progress(st.session_state.user_id, 4)
 samples = read_json_from_file(TASK_INFO["memory_experiment"]["annotation_filepath"])
 sample_response = {}
 print(st.session_state)
 if "shuffled_keys_recognition" not in st.session_state:
-    shuffled_keys = [key for key, value in samples.items() if st.session_state.user[3] in value["presentation_grouping"] and value["grouping"] != 5]
+    already_judged = user_repository.get_item_progress("judged_recognition", st.session_state.user_id)
+    if not already_judged:
+        shuffled_keys = [key for key, value in samples.items() if st.session_state.user[3] in value["presentation_grouping"] and value["grouping"] != 5]
+        already_judged = []
+    else:
+        shuffled_keys = [key for key, value in samples.items() if st.session_state.user[3] in value["presentation_grouping"] and value["grouping"] != 5 
+                         and key not in already_judged]
     random.shuffle(shuffled_keys)
     st.session_state.shuffled_keys_recognition = shuffled_keys
     print("Added shuffled keys:", st.session_state.shuffled_keys_recognition)
@@ -79,6 +86,9 @@ if show_next:
         print("key:", key)
         print("response:", user_response)
         user_repository.save_one_annotation(st.session_state.user_id, "recognition", int(key), sample_response)
+        already_judged.append(key)
+        progression_data["judged_recognition"] = already_judged
+        user_repository.update_demographics(st.session_state.user_id, progression_data)
         #key = st.session_state.shuffled_keys[st.session_state.index]
         #placeholder.write(samples[key]["headline"])
         st.session_state.index += 1

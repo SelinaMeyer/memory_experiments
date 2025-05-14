@@ -54,13 +54,19 @@ def log_in(user_id: str, task=None, as_admin=False) -> None:
     :param user_id: The ID of the user who requested the login.
     :param as_admin: Whether to log in as admin.
     """
+
+
     target_id = user_id
     if as_admin:
         target_id = "admin"
-    
+    user = user_repository.get_user(target_id)
+    if user:
+        st.session_state.user = user
     st.session_state.user_id = target_id
     st.session_state.task = task
     st.rerun()
+        
+        
 
 def authenticate_admin(user_id: str) -> bool:
     """

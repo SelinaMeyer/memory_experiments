@@ -116,3 +116,21 @@ if not user:
                 st.session_state.captcha = "".join(random.choices(string.ascii_letters + string.digits, k=length_captcha))
                 print("the captcha is: ", st.session_state.captcha)
                 st.rerun()
+else:
+    checkpoint = user_repository.get_progress(target_id)
+    st.session_state.user = list(user)
+    print(checkpoint)
+    if checkpoint[0] == 1:
+        st.switch_page("memory_experiment/pages/presentation_page.py")
+    elif checkpoint[0] == 2:
+        st.switch_page("memory_experiment/pages/distractor_page.py")
+    elif checkpoint[0] == 3:
+        st.switch_page("memory_experiment/pages/recall_page.py")
+    elif checkpoint[0] == 4:
+        st.switch_page("memory_experiment/pages/recognition_page.py")
+    elif checkpoint[0] == 5:
+        st.switch_page("memory_experiment/pages/truthjudgement_page.py")
+    elif checkpoint[0] == 6:
+        st.switch_page("memory_experiment/pages/demographics_page.py")
+    elif checkpoint[0] == 7:
+        st.switch_page("memory_experiment/pages/thank_you_page.py")

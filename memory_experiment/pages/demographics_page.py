@@ -45,6 +45,7 @@ political_labels = {
     5: "prefer not to say"
 }
 demographics = {}
+user_repository.set_progress(st.session_state.user_id, 6)
 st.write("Below, we ask you to provide some demographic information about yourself. If you do not feel comfortable answering a question, you can leave the field empty.")
 with st.form("Please provide the following information about yourself:"):
     age = st.number_input("How old are you?", min_value=0, max_value=100, key="age", placeholder=0)

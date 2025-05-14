@@ -1,5 +1,6 @@
 import streamlit as st
 import time
+from core.scripts import user_repository
 
 hide_streamlit_style = """
                 <style>
@@ -36,7 +37,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 if st.session_state.get("distractor_timer") not in st.session_state:
         st.session_state.distractor_timer = time.time()
-
+user_repository.set_progress(st.session_state.user_id, 2)
 @st.fragment(run_every=1)
 def distraction():
     if time.time() - st.session_state.get("distractor_timer") < 15:

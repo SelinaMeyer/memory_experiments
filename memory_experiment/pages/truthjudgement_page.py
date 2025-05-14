@@ -39,12 +39,19 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 st.html("""<p>Below you will see some news headlines on the screen one after the other. 
          <p>For each headline, please indicate how false or true you personally think it is (scale from 1=false to 7=true).""")
-
+user_repository.set_progress(st.session_state.user_id, 5)
 samples = read_json_from_file(TASK_INFO["memory_experiment"]["annotation_filepath"])
 sample_response = {}
+progression_data = {}
 print(st.session_state)
 if "shuffled_keys_credibility" not in st.session_state:
-    shuffled_keys = [key for key, value in samples.items() if st.session_state.user[3] in value["presentation_grouping"] and value["grouping"] != 4]
+    already_judged = user_repository.get_item_progress("judged_credibility", st.session_state.user_id)
+    if not already_judged:
+        shuffled_keys = [key for key, value in samples.items() if st.session_state.user[3] in value["presentation_grouping"] and value["grouping"] != 4]
+        already_judged = []
+    else:
+        shuffled_keys = [key for key, value in samples.items() if st.session_state.user[3] in value["presentation_grouping"] and value["grouping"] != 4
+                         and key not in already_judged]
     random.shuffle(shuffled_keys)
     st.session_state.shuffled_keys_credibility = shuffled_keys
     print("Added shuffled keys:", st.session_state.shuffled_keys_credibility)
@@ -85,6 +92,9 @@ if show_next:
         print("response:", user_response)
     
         user_repository.update_annotation(st.session_state.user_id, int(key), user_response)
+        already_judged.append(key)
+        progression_data["judged_credibility"] = already_judged
+        user_repository.update_demographics(st.session_state.user_id, progression_data)
         #key = st.session_state.shuffled_keys[st.session_state.index]
         #placeholder.write(samples[key]["headline"])
         st.session_state.index += 1

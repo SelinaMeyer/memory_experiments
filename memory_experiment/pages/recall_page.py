@@ -38,6 +38,8 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 if "recall_start_time" not in st.session_state:
     st.session_state.recall_start_time = time.time()
 
+user_repository.set_progress(st.session_state.user_id, 3)
+
 st.html("""<p>Now please try to remember the headlines you learned at the beginning.
                     <br>The order of the headlines does not matter. Just write them down as you remember them, using a new line for each new headline. 
                     <p>If you can, please try to remember the headline in its original form as accurately as possible - but if you can't remember the exact headline, you can also paraphrase in your own words what the headline was about. 

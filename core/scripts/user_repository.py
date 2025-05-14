@@ -49,6 +49,15 @@ def create_user(user_id: str, task: str = "ambiguity_task", data: dict = {}):
     conn.commit()  # Commit changes to the database
     # conn.close()
 
+def get_progress(user_id:str):
+    conn = st.session_state.conn 
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT progress FROM user_data WHERE user_id=%s", (user_id,))
+    result = cursor.fetchone()
+
+    return result
+
 def update_demographics(user_id: str, new_data: dict):
     """
     Update the demographic data of the user with the given user id.
@@ -77,9 +86,31 @@ def update_demographics(user_id: str, new_data: dict):
     conn.commit()
     # conn.close()
 
+def set_progress(user_id: str, prog: int):
+    conn = st.session_state.conn
+    cursor = conn.cursor()
+
+    cursor.execute("""
+                   UPDATE user_data
+                    SET progress = %s
+                   WHERE user_id = %s""", (prog, user_id))
+    
+    conn.commit()
+    
+def get_item_progress(current_stage:str, user_id:str):
+    conn = st.session_state.conn
+    cursor = conn.cursor()
+
+    cursor.execute(f"SELECT data FROM user_data WHERE user_id = %s", (user_id,))
+    result = cursor.fetchone()
+    data = result[0]
+    stage_result = data.get(current_stage, [])
+
+    return stage_result
+
 def update_annotation(user_id: str, sample_id,  cred_rating: str):
     """
-    Update the demographic data of the user with the given user id.
+    Update the annotation data of the user with the given user id.
 
     :param user_id: ID-string of user
     :param new_data: New demographic data to be merged into the existing data.
