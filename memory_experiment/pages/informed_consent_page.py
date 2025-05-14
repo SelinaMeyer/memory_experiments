@@ -100,7 +100,7 @@ if not user:
             Image = ImageCaptcha(width=width, height=height)
             data = Image.generate(st.session_state.captcha)
             col1.image(data)
-            captcha_text = col2.text_input("Please enter the captcha text:", max_chars=length_captcha)
+            captcha_text = col2.text_input("Please enter the captcha text (If the captcha is hard to decipher, you can click \"Generate new Captcha\" to get a different one):", max_chars=length_captcha)
             if captcha_text:
                 print("Captcha text entered: ", captcha_text)
                 if captcha_text == st.session_state.captcha:
