@@ -46,18 +46,16 @@ user_repository.set_progress(st.session_state.user_id, 4)
 samples = read_json_from_file(TASK_INFO["memory_experiment"]["annotation_filepath"])
 sample_response = {}
 print(st.session_state)
+shuffled_keys, index = user_repository.get_item_progress("recognition_keys", st.session_state.user_id)
+print(shuffled_keys, index)
 if "shuffled_keys_recognition" not in st.session_state:
-    already_judged = user_repository.get_item_progress("judged_recognition", st.session_state.user_id)
-    if not already_judged:
+    if not shuffled_keys:
         shuffled_keys = [key for key, value in samples.items() if st.session_state.user[3] in value["presentation_grouping"] and value["grouping"] != 5]
-        already_judged = []
-    else:
-        shuffled_keys = [key for key, value in samples.items() if st.session_state.user[3] in value["presentation_grouping"] and value["grouping"] != 5 
-                         and key not in already_judged]
-    random.shuffle(shuffled_keys)
+        index = 0
+        random.shuffle(shuffled_keys)
     st.session_state.shuffled_keys_recognition = shuffled_keys
     print("Added shuffled keys:", st.session_state.shuffled_keys_recognition)
-    st.session_state.index = 0
+    st.session_state.index = index
 
 if st.session_state.index < len(st.session_state.shuffled_keys_recognition):
     print("In Fragment!")
@@ -69,6 +67,7 @@ if st.session_state.index < len(st.session_state.shuffled_keys_recognition):
     show_next = st.button("Show next", key="show_next_button")
 else:
     st.session_state.recognition_end_time = time.time()
+    user_repository.update_demographics(st.session_state.user_id, {"recognition_end_time": st.session_state.recognition_end_time})
     st.switch_page("memory_experiment/pages/truthjudgement_page.py")
 
 if show_next:
@@ -86,11 +85,11 @@ if show_next:
         print("key:", key)
         print("response:", user_response)
         user_repository.save_one_annotation(st.session_state.user_id, "recognition", int(key), sample_response)
-        already_judged.append(key)
-        progression_data["judged_recognition"] = already_judged
+        st.session_state.index += 1
+        progression_data["recognition_keys"] = st.session_state.shuffled_keys_recognition
+        progression_data["index"] = st.session_state.index
         user_repository.update_demographics(st.session_state.user_id, progression_data)
         #key = st.session_state.shuffled_keys[st.session_state.index]
         #placeholder.write(samples[key]["headline"])
-        st.session_state.index += 1
-        print("Rerunning with new key", st.session_state.index)
+        print("Rerunning with new index", st.session_state.index)
         st.rerun()

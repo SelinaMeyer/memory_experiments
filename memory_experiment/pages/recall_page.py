@@ -35,9 +35,12 @@ hide_streamlit_style = """
                 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
-if "recall_start_time" not in st.session_state:
+start, i = user_repository.get_item_progress("recall_start_time", st.session_state.user_id)
+if not start:
     st.session_state.recall_start_time = time.time()
-
+    user_repository.update_demographics(st.session_state.user_id, {"recall_start_time": st.session_state.recall_start_time})
+else:
+    st.session_state.recall_start_time = start
 user_repository.set_progress(st.session_state.user_id, 3)
 
 st.html("""<p>Now please try to remember the headlines you learned at the beginning.
@@ -45,8 +48,7 @@ st.html("""<p>Now please try to remember the headlines you learned at the beginn
                     <p>If you can, please try to remember the headline in its original form as accurately as possible - but if you can't remember the exact headline, you can also paraphrase in your own words what the headline was about. 
                     <p>You should take approximately five minutes to write down as many headlines as possible from the memorization task.""")
 recall = st.text_area("Headlines you remember:", key="recall", height=300)
-if "recall_start_time" not in st.session_state:
-    st.session_state.recall_start_time = time.time()
+
 recall_dict = {}
 
 if st.button("Submit"):
@@ -67,6 +69,7 @@ if st.button("Submit"):
                 recall_dict["recall"].append(x)
             user_repository.save_one_annotation(st.session_state.user_id, "recall", 1, recall_dict)
             st.session_state.recall_end_time = time.time()
+            user_repository.update_demographics(st.session_state.user_id, {"recall_end_time": st.session_state.recall_end_time})
             st.switch_page("memory_experiment/pages/recognition_page.py")
     else:
         textsplit = recall.splitlines()
@@ -75,4 +78,5 @@ if st.button("Submit"):
             recall_dict["recall"].append(x)
         user_repository.save_one_annotation(st.session_state.user_id, "recall", 1, recall_dict)
         st.session_state.recall_end_time = time.time()
+        user_repository.update_demographics(st.session_state.user_id, {"recall_end_time": st.session_state.recall_end_time})
         st.switch_page("memory_experiment/pages/recognition_page.py")

@@ -105,8 +105,9 @@ def get_item_progress(current_stage:str, user_id:str):
     result = cursor.fetchone()
     data = result[0]
     stage_result = data.get(current_stage, [])
+    stage_index = data.get("index", 0)
 
-    return stage_result
+    return stage_result, stage_index
 
 def update_annotation(user_id: str, sample_id,  cred_rating: str):
     """
@@ -151,6 +152,23 @@ def update_annotation(user_id: str, sample_id,  cred_rating: str):
         "UPDATE user_data SET annotations = %s WHERE user_id = %s",
         (json.dumps(data), user_id)
     )
+    conn.commit()
+
+def increase_login_attempts(user_id: str):
+    """
+    Increase the login attempts for a user by 1.
+    
+    :param user_id: ID-string of user
+    """
+    conn = st.session_state.conn
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        UPDATE user_data
+        SET qualified = qualified + 1
+        WHERE user_id = %s
+    """, (user_id,))
+    
     conn.commit()
     
 def save_one_annotation(user_id: str, key: str, question_index: int, question_annotation: dict):

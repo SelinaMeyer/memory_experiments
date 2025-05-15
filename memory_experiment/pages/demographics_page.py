@@ -98,11 +98,6 @@ if submitted:
     demographics["study_difficulty"] = difficulty
     demographics["study_description"] = study_description
     demographics["further_comments"] = further_comments
-    demographics["experiment_start_time"] = st.session_state.experiment_start_time
-    demographics["recall_start_time"] = st.session_state.recall_start_time
-    demographics["recall_end_time"] = st.session_state.recall_end_time
-    demographics["recognition_end_time"] = st.session_state.recognition_end_time
-    demographics["truth_judgement_end_time"] = st.session_state.truth_judgement_end_time
     demographics["experiment_end_time"] = time.time()
     user_repository.update_demographics(st.session_state.user_id, demographics)
     st.switch_page("memory_experiment/pages/thank_you_page.py")

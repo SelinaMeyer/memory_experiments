@@ -119,6 +119,7 @@ if not user:
 else:
     checkpoint = user_repository.get_progress(target_id)
     st.session_state.user = list(user)
+    user_repository.increase_login_attempts(target_id)
     print(checkpoint)
     if checkpoint[0] == 1:
         st.switch_page("memory_experiment/pages/presentation_page.py")
