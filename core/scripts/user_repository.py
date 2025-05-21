@@ -327,6 +327,18 @@ def assign_to_weakest_group(user_id: str, task: str):
     st.session_state.user[3] = weakest_group
     conn.commit()
 
+def set_grouping(user_id: str, group_to_set: int):
+    conn = st.session_state.conn
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        UPDATE user_data
+        SET annotator_group = %s
+        WHERE user_id = %s
+    """, (group_to_set, user_id))
+    st.session_state.user[3] = group_to_set
+    conn.commit()
+
 def mark_as_done(user_id):
     conn = st.session_state.conn
     cursor = conn.cursor()
