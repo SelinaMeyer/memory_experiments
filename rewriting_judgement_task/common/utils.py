@@ -3,6 +3,8 @@ import streamlit as st
 from core.scripts.utils import display_progress, read_json_from_file, load_annotation, TASK_INFO, finish_subtask
 from core.scripts import user_repository, database_repository
 
+import random
+
 def format_sentence(sentence):
     return "***" + sentence.replace("[", ":blue-background[") + "***\n"
 
@@ -120,6 +122,8 @@ def get_item_progress(user_id:str):
     data = result[0]
     stage_index = data.get("index", 0)
 
+    stage_index = data.get("shuffled_keys", )
+
     return stage_index
 
 def skip_to_next_sample(index: int, samples: dict, grouping: int, direction: int=1, 
@@ -136,30 +140,23 @@ def skip_to_next_sample(index: int, samples: dict, grouping: int, direction: int
     :return: Index of the next (or previous) sample
     """
 
-    shuffled_keys = user_repository.get_item_progress("keys", st.session_state.user_id)
+    shuffled_keys, index = user_repository.get_item_progress("keys", st.session_state.user_id)
 
     if shuffled_keys not in st.session_state:
         st.session_state.progress = user_repository.get("annotation")
+        if not shuffled_keys:
+            print("No shuffled keys found, creating new ones")
+            shuffled_keys = [key for key, value in samples.items() if value["grouping"] == st.session_state.user[3]]
+            random.shuffle(shuffled_keys)
+            index = 0
+
+    st.session_state.shuffled_keys = shuffled_keys
+    print("Added shuffled keys:", st.session_state.shuffled_keys)
+    st.session_state.index = index
+    print("current index:", st.session_state.index)
 
     index += direction
-    if index < 1:
-        return 1
-    while True:
-        if index > len(samples):
-            finish_subtask(subtask, qualification_function)
-            break
-        if str(index) not in samples:  # account for samples having id gaps
-            index += direction
-            continue
-        checked_sample = samples[str(index)]
-        if ("grouping" not in checked_sample) or (grouping == checked_sample["grouping"]):
-            break  # break when finding relevant sample
-        else:
-            index += direction
-            if index < 1:  # went back too far
-                index = 1
-                direction = 1  # reverse to find first sample again
-    # return index where it found a sample
+
     return index
 
 

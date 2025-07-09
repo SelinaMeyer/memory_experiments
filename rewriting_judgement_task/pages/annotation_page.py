@@ -7,16 +7,16 @@ from core.scripts.utils import read_json_from_file, TASK_INFO
 from rewriting_judgement_task.common import utils
 
 
-samples = read_json_from_file(TASK_INFO["big_eval_ending_task"]["annotation_filepath"])
+samples = read_json_from_file(TASK_INFO["rewrite_judgement_task"]["annotation_filepath"])
 
 # Turns out if you dont check that, annotators may start with the wrong sample in the post-qualification grouping option.
 if user_repository.get_qualification() == 1:
     if "progress" not in st.session_state:
         st.session_state.progress = user_repository.get_checkpoint("annotation")
         if not st.session_state.progress:  # no checkpoint yet -> simply go to the first relevant sample
-            st.session_state.progress = skip_to_next_sample(0, samples, st.session_state.user[3], 1, 
+            st.session_state.progress = utils.skip_to_next_sample(0, samples, st.session_state.user[3], 1, 
                                                             "annotation", qualification_function=None)
-    st.session_state.page = "big_eval_ending_task_annotation_page_sample" + str(st.session_state.progress)
+    st.session_state.page = "rewrite_judgement_task_annotation_page_sample" + str(st.session_state.progress)
 
 if user_repository.get_qualification() != 1:
     st.write("## You must pass qualification before starting annotation. \n\n Select **Qualification** in the navigation bar to your left to try the qualification test.")
@@ -34,7 +34,7 @@ else:
     annotation = {"question": question, "slider": slider_choice, "nonsensical": nonsensical_input, "comment": comment_input}
 
     if next_input:
-        handle_next_button(annotation, index, samples, "annotation")
+        utils.handle_next_button(annotation, index, samples, "annotation")
 
     if back_button:
-        handle_back_button(annotation, index, samples, "annotation")
+        utils.handle_back_button(annotation, index, samples, "annotation")
