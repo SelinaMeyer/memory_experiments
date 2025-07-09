@@ -175,11 +175,11 @@ The revision omits details about Jonathan Majors' confession about his aggressiv
 
 # The Annotation Procedure
 
-You will first have to pass the qualification test, which consists of five questions. **You only have one attempt and you are only allowed one mistake.** Carefully look at the sentences and determine which sense is more likely (or both/neither).
+You will first have to pass the qualification test, which consists of five questions. These are much easier questions than many you will see in the annotation task itself. **You only have one attempt and you are only allowed one mistake.** Carefully look at the sentences and determine whether the revision accurately reflects the original and whether the style is appropriate.
 
 **If you fail at the qualification test**: You will not be able to start the annotation. ***IMPORTANT***: **Remember to copy the Screen-Out Completion Code that will be displayed to Prolific.** If we see that an honest effort was made, you will get a small amount of money as compensation for your time.
 
-**If you succeed at the qualification test**: Once you pass the qualification test, you will automatically unlock access to the annotation page. It is structurally identical to the qualification. Each annotator is assigned 40 samples. We expect each sample to take 30-60 seconds, so it will likely take around 30 minutes in total.
+**If you succeed at the qualification test**: Once you pass the qualification test, you will automatically unlock access to the annotation page. It is structurally identical to the qualification. Each annotator is assigned ... samples. We expect each sample to take 30-60 seconds, so it will likely take around 30 minutes in total.
 
 Your progress for both qualification and annotation is **saved automatically** anytime you press the *NEXT* button.
 
