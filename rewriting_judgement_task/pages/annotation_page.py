@@ -7,15 +7,13 @@ from core.scripts.utils import read_json_from_file, TASK_INFO
 from rewriting_judgement_task.common import utils
 
 
-samples = read_json_from_file(TASK_INFO["rewrite_judgement_task"]["annotation_filepath"])
+samples = read_json_from_file(TASK_INFO["rewriting_judgement_task"]["annotation_filepath"])
 
 # Turns out if you dont check that, annotators may start with the wrong sample in the post-qualification grouping option.
 if user_repository.get_qualification() == 1:
-    if "progress" not in st.session_state:
-        st.session_state.progress = user_repository.get_checkpoint("annotation")
-        if not st.session_state.progress:  # no checkpoint yet -> simply go to the first relevant sample
-            st.session_state.progress = utils.skip_to_next_sample(0, samples, st.session_state.user[3], 1, 
-                                                            "annotation", qualification_function=None)
+    if not st.session_state.progress:  # no checkpoint yet -> simply go to the first relevant sample
+        st.session_state.progress, keys = utils.skip_to_next_sample(0, samples, st.session_state.user[3], 1, 
+                                                        "annotation", qualification_function=None)
     st.session_state.page = "rewrite_judgement_task_annotation_page_sample" + str(st.session_state.progress)
 
 if user_repository.get_qualification() != 1:
@@ -30,9 +28,10 @@ else:
 
     back_button = st.button(label="Back", key = 10 * index + 7, help="Go back to the previous sample.")
 
-    question, slider_choice, nonsensical_input, comment_input, next_input = utils.print_annotation_schema_sliders("annotation", index)
-    annotation = {"question": question, "slider": slider_choice, "nonsensical": nonsensical_input, "comment": comment_input}
+    question, accuracy, accuracy_subclass, style, style_subclass, emotion_shift, comment_input, next_input =  utils.print_annotation_schema_sliders("annotation", st.session_state.shuffled_keys[index])
 
+    annotation = {"question": question, "accuracy": accuracy, "accuracy_subclass": accuracy_subclass,
+                   "style": style, "style_subclass": style_subclass, "emotion_shift": emotion_shift, "comment": comment_input, "keys": st.session_state.shuffled_keys, "index": index}
     if next_input:
         utils.handle_next_button(annotation, index, samples, "annotation")
 

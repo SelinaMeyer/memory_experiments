@@ -140,7 +140,7 @@ def skip_to_next_sample(index: int, samples: dict, grouping: int, direction: int
     :return: Index of the next (or previous) sample
     """
 
-    shuffled_keys, index = user_repository.get_item_progress("keys", st.session_state.user_id)
+    shuffled_keys, index = get_item_progress("keys", st.session_state.user_id)
 
     if shuffled_keys not in st.session_state:
         st.session_state.progress = user_repository.get("annotation")
@@ -157,7 +157,10 @@ def skip_to_next_sample(index: int, samples: dict, grouping: int, direction: int
 
     index += direction
 
-    return index
+    if index > len(samples):
+        finish_subtask(subtask, qualification_function)
+
+    return index, shuffled_keys
 
 
 def handle_back_button(annotation: dict, index: int, samples: dict, subtask="annotation"):
