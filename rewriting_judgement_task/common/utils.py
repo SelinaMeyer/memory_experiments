@@ -120,11 +120,11 @@ def get_item_progress(user_id:str):
     cursor.execute(f"SELECT data FROM user_data WHERE user_id = %s", (user_id,))
     result = cursor.fetchone()
     data = result[0]
-    stage_index = data.get("index", 0)
+    index = data.get("index", 0)
 
-    stage_index = data.get("shuffled_keys", )
+    keys = data.get("keys", [])
 
-    return stage_index
+    return index, keys
 
 def skip_to_next_sample(index: int, samples: dict, grouping: int, direction: int=1, 
                         subtask: str="annotation", qualification_function=None) -> int:
@@ -140,7 +140,7 @@ def skip_to_next_sample(index: int, samples: dict, grouping: int, direction: int
     :return: Index of the next (or previous) sample
     """
 
-    shuffled_keys, index = get_item_progress("keys", st.session_state.user_id)
+    shuffled_keys, index = get_item_progress(st.session_state.user_id)
 
     if shuffled_keys not in st.session_state:
         st.session_state.progress = user_repository.get("annotation")

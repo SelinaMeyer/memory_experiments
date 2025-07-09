@@ -11,7 +11,7 @@ samples = read_json_from_file(TASK_INFO["rewriting_judgement_task"]["annotation_
 
 # Turns out if you dont check that, annotators may start with the wrong sample in the post-qualification grouping option.
 if user_repository.get_qualification() == 1:
-    if not st.session_state.progress:  # no checkpoint yet -> simply go to the first relevant sample
+    if "progress" not in st.session_state:  # no checkpoint yet -> simply go to the first relevant sample
         st.session_state.progress, keys = utils.skip_to_next_sample(0, samples, st.session_state.user[3], 1, 
                                                         "annotation", qualification_function=None)
     st.session_state.page = "rewrite_judgement_task_annotation_page_sample" + str(st.session_state.progress)
