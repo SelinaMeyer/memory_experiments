@@ -13,9 +13,7 @@ def check_if_qualified(annotations: dict) -> bool:
     score = 0
     for question_id in qualification_questions:
         if (annotations["qualification"][int(question_id)-1]["accuracy"] == qualification_questions[question_id]["correct_accuracy_answer"] and
-        annotations["qualification"][int(question_id)-1]["style"] == qualification_questions[question_id]["correct_style_answer"] and
-        annotations["qualification"][int(question_id)-1]["accuracy_subclass"] == qualification_questions[question_id]["correct_accuracy_subclass"] and
-        annotations["qualification"][int(question_id)-1]["style_subclass"] == qualification_questions[question_id]["correct_style_subclass"]):
+        annotations["qualification"][int(question_id)-1]["style"] == qualification_questions[question_id]["correct_style_answer"]):
             score += 1
 
     return score >= needed_score

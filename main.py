@@ -236,7 +236,7 @@ else:
     pg = st.navigation(
         {
         "Home": [main_page, authentication_page],
-        "Task Previews": [rewriting_judgement_start_page, rewriting_judgement_qualification_page]
+        "Task Previews": [rewriting_judgement_start_page]
         }
 
     )
