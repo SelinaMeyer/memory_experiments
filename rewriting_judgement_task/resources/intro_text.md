@@ -8,20 +8,20 @@ You are asked to judge the following categories:
 
 
 ##### 1. Accuracy: Does the content in the revised version accurately reflect the content of the source text? 
-There are three ways, in which accuracy can be violated. These can also occurr together:
+There are three ways, in which accuracy is commonly violated, which can also occurr together:
 
-**Misrepresentation**: the revision misrepresents information provided in the original headline       
-**Addition**: The revision includes content not present in the original headline        
-**Omission**: The revision is missing content present in the original headline
+* **Misrepresentation**: The revision misrepresents information provided in the original headline       
+* **Addition**: The revision includes content not present in the original headline        
+* **Omission**: The revision is missing content present in the original headline
 
 ##### 2. Style: Is the language style of the revised headline appropriate? 
 Inappropriate style can manifest in various forms, that can also occurr together: 
 
-**Grammar**: The revision contains grammar or language errors   
-**Awkward Style**: The revision is grammatical, but unnatural as a news headline or awkward (e.g it involves excessive wordiness or overly embedded clauses)    
-**Register**: The revision does not match the tone or level of formality exhibited by the original headline.    
+* **Grammar**: The revision contains grammar or language errors   
+* **Awkward Style**: The revision is grammatical, but unnatural as a news headline or awkward (e.g it involves excessive wordiness or overly embedded clauses)    
+* **Register**: The revision does not match the tone or level of formality exhibited by the original headline.    
 *Note that the inclusion of first/second person pronouns generally changes how personal the headline is, which in this case does not qualify as a shift in formality*   
-**Inconsistent Style**: The style or tone is inconsistent within the revision (e.g. factual, dry information is paired with sensationalism)
+* **Inconsistent Style**: The style or tone is inconsistent within the revision (e.g. factual, dry information is paired with sensationalism)
 
 Also, feel free to add comments in the comment field. You can even suggest revision improvements, if you can think of a better phrasing (but this is not the main goal of this annotation task)
 
@@ -47,7 +47,7 @@ You need to hear Jonathan Majors' disturbing admission about being 'aggressive' 
     :black_square_button: Grammar    :black_square_button: Awkward Style    :heavy_check_mark: Register    :black_square_button: Inconsistent Style 
 
 **Explanation**:
-The introduction of the word "disturbing" in the revision changes the tone of the original headline, by introducing loaded language and increasing sensationalism.
+The introduction of the word "disturbing" in the revision changes the tone of the original headline by introducing loaded language and increasing sensationalism.
 
 ---
 
@@ -68,7 +68,7 @@ You'll Love This: Betty White's Timeless Appeal Celebrated with a New Stamp in L
    :black_square_button: Grammar  :black_square_button: Awkward Style  :heavy_check_mark: Register  :black_square_button: Inconsistent Style 
 
 **Explanation**: 
-The revision adds specifics not present in the original headline, by claiming that Betty White's "timeless appeal" is celebrated. It also misrepresents the original headline by saying that a new stamp was created for this cause, which is not clearly mentioned in the original. The new headline differs in tone, as it is less factual than the original.
+The revision adds specifics not present in the original headline by claiming that Betty White's "timeless appeal" is celebrated. It also misrepresents the original headline by saying that a new stamp was created for this cause, which is not clearly mentioned in the original. The new headline differs in tone, as it is less factual than the original.
 
 ---
 
@@ -129,7 +129,7 @@ FDA's recall: Thousands of pounds of mislabeled decaf coffee may impact your cof
    :black_square_button: Grammar  :heavy_check_mark: Awkward Style  :heavy_check_mark: Register  :heavy_check_mark: Inconsistent Style 
 
 **Explanation**: 
-The original is factual, whereas the revision reads awkwardly and is more sensational in tone. The added exclamation point also makes the style of the headline incosnsistent in itself: While the beginning of the headline is neutral in tone, the second part is more dramatic.
+The original is factual, whereas the revision reads awkwardly and is more sensational in tone. The added exclamation mark also makes the style of the headline inconsistent in itself: While the beginning of the headline is neutral in tone, the second part is more dramatic.
 
 ---
 
@@ -148,6 +148,7 @@ You can listen to Jonathan Majors confess to aggression against his ex in newly 
 - [ ] No
 
 **Explanation**: 
+The headline retains the tone and accurately reflects the content of the original.
 
 ---
 
@@ -168,7 +169,7 @@ You won’t believe what Jonathan Majors admitted about his past in this new aud
     :black_square_button: Grammar  :black_square_button: Awkward Style  :heavy_check_mark: Register  :black_square_button: Inconsistent Style 
 
 **Explanation**:    
-The revision omits detailed about Jonathan Majors' confession about his aggressive behaviour. "You won't believe" adds sensationalism not present in the original headline.
+The revision omits details about Jonathan Majors' confession about his aggressive behaviour. The phrase "You won't believe" adds sensationalism not present in the original headline.
 
 ---
 
