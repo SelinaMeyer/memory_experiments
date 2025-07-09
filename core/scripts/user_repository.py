@@ -112,7 +112,33 @@ def save_one_annotation(user_id: str, key: str, question_index: int, question_an
     st.session_state.user[5] = annotations
     conn.commit()
     #conn.close()
+def update_demographics(user_id: str, new_data: dict):
+    """
+    Update the demographic data of the user with the given user id.
 
+    :param user_id: ID-string of user
+    :param new_data: New demographic data to be merged into the existing data.
+    :return: None
+    """
+    conn = st.session_state.conn
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT data FROM user_data WHERE user_id = %s", (user_id,))
+    result = cursor.fetchone()
+
+    if result and result[0]:  # Check if data exists
+        existing_data = result[0]
+        existing_data.update(new_data)  # Merge new data into existing data
+    else:
+        existing_data = new_data
+
+    cursor.execute("""
+        UPDATE user_data
+        SET data = %s
+        WHERE user_id = %s
+    """, (json.dumps(existing_data), user_id))
+    conn.commit()
+    # conn.close()
 def get_qualification() -> int:
     """
     Check if the user with the given id passed a qualification test.

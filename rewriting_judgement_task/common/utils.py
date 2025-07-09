@@ -143,22 +143,18 @@ def skip_to_next_sample(index: int, samples: dict, grouping: int, direction: int
     shuffled_keys, index = get_item_progress(st.session_state.user_id)
 
     if shuffled_keys not in st.session_state:
-        st.session_state.progress = user_repository.get("annotation")
         if not shuffled_keys:
             print("No shuffled keys found, creating new ones")
             shuffled_keys = [key for key, value in samples.items() if value["grouping"] == st.session_state.user[3]]
             random.shuffle(shuffled_keys)
             index = 0
 
-    st.session_state.shuffled_keys = shuffled_keys
-    print("Added shuffled keys:", st.session_state.shuffled_keys)
-    st.session_state.index = index
-    print("current index:", st.session_state.index)
+        st.session_state.shuffled_keys = shuffled_keys
+        print("Added shuffled keys:", st.session_state.shuffled_keys)
+        st.session_state.index = index
+        print("current index:", st.session_state.index)
 
     index += direction
-
-    if index > len(samples):
-        finish_subtask(subtask, qualification_function)
 
     return index, shuffled_keys
 
@@ -174,7 +170,7 @@ def handle_back_button(annotation: dict, index: int, samples: dict, subtask="ann
     """
     # don't save when pressing back on the newest sample, since it will otherwise get skipped when returning later
     if index < user_repository.get_checkpoint(key=subtask, print=False):
-        user_repository.save_one_annotation(st.session_state.user_id, subtask, index, annotation)
+        user_repository.save_one_annotation(st.session_state.user_id, subtask, st.session_state.shuffled_keys[index], annotation)
 
     grouping = st.session_state.user[3]
     # skip backwards over the samples of the other groups to arrive at the new index
@@ -199,7 +195,7 @@ def handle_next_button(annotation: dict, index: int, samples: dict, subtask="ann
     :param subtask: The current subtask, e.g. annotation or qualification
     :param qualification_function: If subtask=qualification, a function that evaluates success of qualification given user annotations
     """
-    user_repository.save_one_annotation(st.session_state.user_id, subtask, index, annotation)
+    user_repository.save_one_annotation(st.session_state.user_id, subtask, st.session_state.shuffled_keys[index], annotation)
 
     if index >= len(samples):
         finish_subtask(subtask, qualification_function=qualification_function)
