@@ -1,15 +1,15 @@
 {
     "1": {
         "original": "FDA recalls thousands of pounds of ground coffee mislabeled as decaffeinated",
-        "revision": "You Might Be Drinking Caffeinated Coffee Without Knowing It",
-        "correct_accuracy_answer": "No",
-        "correct_accuracy_subclass": [false, true, false],
+        "revision": "FDA Finds You Might Be Drinking Caffeinated Coffee Without Knowing It",
+        "correct_accuracy_answer": "Yes",
+        "correct_accuracy_subclass": [false, false, false],
         "correct_style_answer": "Yes",
         "correct_style_subclass": [false, false, false, false]
     },
     "2": {
         "original": "Being aerobically fit in middle age may reduce Alzheimer’s and dementia risk, study says",
-        "revision": "Boost Your Aerobic Fitness in Middle Age: New Study Suggests It May Lower Alzheimer’s and Dementia Risk",
+        "revision": "Being aerobically fit in middle age may reduce your Alzheimer’s and dementia risk, study says",
         "correct_accuracy_answer": "Yes",
         "correct_accuracy_subclass": [false, false, false],
         "correct_style_answer": "Yes",
@@ -17,7 +17,7 @@
     },
     "3": {
         "original": "Utah Becomes First State to Ban Fluoride in Public Water",
-        "revision": "You Have a Right to Know: Utah's Groundbreaking Move to Ban Fluoride in Public Water",
+        "revision": "You Have a Right to Know! Utah's Groundbreaking Move to become First State to Ban Fluoride in Public Water",
         "correct_accuracy_answer": "Yes",
         "correct_accuracy_subclass": [false, false, false],
         "correct_style_answer": "No",
