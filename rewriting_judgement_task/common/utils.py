@@ -46,7 +46,7 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
     st.write("---")
 
     accuracy = st.radio("Does the content in the revised version accurately reflect the content of the source text?",
-                        ["Yes", "No"], index=None)
+                        ["Yes", "No"], key=5+index, index=None)
     
     misrepresentation, omission, addition = False, False, False
     if accuracy == "No":
@@ -71,7 +71,7 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
     st.write("\n")
 
     style = st.radio("Is the language style of the revised headline appropriate?",
-                        ["Yes", "No"], index=None)
+                        ["Yes", "No"], key=10+index, index=None)
     
     grammar, awkward, register, inconsistent = False, False, False, False
     if style == "No":
