@@ -1,7 +1,7 @@
 import streamlit as st
 
-from core.scripts.utils import display_progress, read_json_from_file, load_annotation, TASK_INFO
-
+from core.scripts.utils import display_progress, read_json_from_file, load_annotation, TASK_INFO, finish_subtask
+from core.scripts import user_repository, database_repository
 
 def format_sentence(sentence):
     return "***" + sentence.replace("[", ":blue-background[") + "***\n"
@@ -111,17 +111,16 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
     
     return return_sample, accuracy, accuracy_subclass, style, style_subclass, emotion_shift, comment_input, next_input
 
-def get_item_progress(current_stage:str, user_id:str):
+def get_item_progress(user_id:str):
     conn = st.session_state.conn
     cursor = conn.cursor()
 
     cursor.execute(f"SELECT data FROM user_data WHERE user_id = %s", (user_id,))
     result = cursor.fetchone()
     data = result[0]
-    stage_result = data.get(current_stage, [])
     stage_index = data.get("index", 0)
 
-    return stage_result, stage_index
+    return stage_index
 
 def skip_to_next_sample(index: int, samples: dict, grouping: int, direction: int=1, 
                         subtask: str="annotation", qualification_function=None) -> int:
@@ -136,6 +135,12 @@ def skip_to_next_sample(index: int, samples: dict, grouping: int, direction: int
     :param qualification function: Function to evaluate whether qualification was passed, not needed if subtask!=qualification
     :return: Index of the next (or previous) sample
     """
+
+    shuffled_keys = user_repository.get_item_progress("keys", st.session_state.user_id)
+
+    if shuffled_keys not in st.session_state:
+        st.session_state.progress = user_repository.get("annotation")
+
     index += direction
     if index < 1:
         return 1
