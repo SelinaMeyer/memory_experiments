@@ -19,10 +19,9 @@ Inappropriate style can manifest in various forms, that can also occurr together
 
 * **Grammar**: The revision contains grammar or language errors   
 * **Awkward Style**: The revision is grammatical, but unnatural as a news headline or awkward (e.g it involves excessive wordiness or overly embedded clauses)    
-* **Register**: The revision does not match the tone or level of formality exhibited by the original headline.    
-*Note that the inclusion of first/second person pronouns generally changes how personal the headline is, which in this case does not qualify as a shift in formality*   
 * **Inconsistent Style**: The style or tone is inconsistent within the revision (e.g. factual, dry information is paired with sensationalism)
 
+You can also indicate if a revision differs in tone or emotion compared to the original version.    
 Also, feel free to add comments in the comment field. You can even suggest revision improvements, if you can think of a better phrasing (but this is not the main goal of this annotation task)
 
 ---
@@ -41,13 +40,13 @@ You need to hear Jonathan Majors' disturbing admission about being 'aggressive' 
 
 2. Is the language style of the revised headline appropriate?
 
-- [ ] Yes
-- [x] No
+- [x] Yes
+- [ ] No
 
-    :black_square_button: Grammar    :black_square_button: Awkward Style    :heavy_check_mark: Register    :black_square_button: Inconsistent Style 
+:heavy_check_mark: The revision differs in tone or emotion compared to the original
 
-**Explanation**:
-The introduction of the word "disturbing" in the revision changes the tone of the original headline by introducing loaded language and increasing sensationalism.
+**Explanation**: 
+The headline is appropriate as a news headline and accurately reflects the content of the original headline. The addition of the word "disturbing" changes the emotional tone of the revision compared to the original.
 
 ---
 
@@ -65,10 +64,12 @@ You'll Love This: Betty White's Timeless Appeal Celebrated with a New Stamp in L
 2. Style
 - [ ] Yes
 - [x] No    
-   :black_square_button: Grammar  :black_square_button: Awkward Style  :heavy_check_mark: Register  :black_square_button: Inconsistent Style 
+   :black_square_button: Grammar  :black_square_button: Awkward Style :black_square_button: Inconsistent Style 
+
+:heavy_check_mark: The revision differs in tone or emotion compared to the original
 
 **Explanation**: 
-The revision adds specifics not present in the original headline by claiming that Betty White's "timeless appeal" is celebrated. It also misrepresents the original headline by saying that a new stamp was created for this cause, which is not clearly mentioned in the original. The new headline differs in tone, as it is less factual than the original.
+The revision adds specifics not present in the original headline by claiming that Betty White's "timeless appeal" is celebrated. It also misrepresents the original headline by saying that a new stamp was created for this cause, which is not clearly mentioned in the original. The revision is also more emotional and praising than the original.
 
 ---
 
@@ -86,6 +87,9 @@ You'll Want to Listen to This Leaked Audio of Jonathan Majors' Aggressive Encoun
 2. Is the language style of the revised headline appropriate?
 - [x] Yes
 - [ ] No
+
+
+:black_square_button: The revision differs in tone or emotion compared to the original
 
 **Explanation**: 
 The revision changes the content of the original headline and makes it sound like the audio is of the aggressive behaviour itself, instead of Jonathan Majors recounting his aggressive behaviour. The original headline also does not make clear whether the audio was released by Jonathan Majors itself, while the revision assumes that it was leaked. 
@@ -106,7 +110,9 @@ Jonathan Majors tells us he was ‘aggressive’ with his ex-girlfriend in audio
 - [ ] Yes
 - [x] No
 
-    :black_square_button: Grammar  :heavy_check_mark: Awkward Style  :black_square_button: Register  :black_square_button: Inconsistent Style 
+    :black_square_button: Grammar  :heavy_check_mark: Awkward Style  :black_square_button: Inconsistent Style 
+
+:black_square_button: The revision differs in tone or emotion compared to the original
 
 **Explanation**: 
 The addendum "in audio you have to hear" makes the headline sound awkward and not very realistic as a news headline.
@@ -126,10 +132,12 @@ FDA's recall: Thousands of pounds of mislabeled decaf coffee may impact your cof
 2. Style
 - [ ] Yes
 - [x] No    
-   :black_square_button: Grammar  :heavy_check_mark: Awkward Style  :heavy_check_mark: Register  :heavy_check_mark: Inconsistent Style 
+   :black_square_button: Grammar  :heavy_check_mark: Awkward Style  :heavy_check_mark: Inconsistent Style 
+
+:heavy_check_mark: The revision differs in tone or emotion compared to the original
 
 **Explanation**: 
-The original is factual, whereas the revision reads awkwardly and is more sensational in tone. The added exclamation mark also makes the style of the headline inconsistent in itself: While the beginning of the headline is neutral in tone, the second part is more dramatic.
+The original is factual, whereas the revision reads awkwardly. The added exclamation mark makes the style of the headline inconsistent in itself: While the beginning of the headline is neutral in tone, the second part is more dramatic. The tone of the revision is more sensational than the original.
 
 ---
 
@@ -147,8 +155,10 @@ You can listen to Jonathan Majors confess to aggression against his ex in newly 
 - [x] Yes
 - [ ] No
 
+:black_square_button: The revision differs in tone or emotion compared to the original
+
 **Explanation**: 
-The headline retains the tone and accurately reflects the content of the original.
+The headline accurately reflects the content of the original, is appropriate as a news headline and retains the original tone.
 
 ---
 
@@ -164,9 +174,10 @@ You won’t believe what Jonathan Majors admitted about his past in this new aud
     :black_square_button: Misrepresentation  :black_square_button: Addition  :heavy_check_mark: Omission 
 
 2. Style
-- [ ] Yes
-- [x] No    
-    :black_square_button: Grammar  :black_square_button: Awkward Style  :heavy_check_mark: Register  :black_square_button: Inconsistent Style 
+- [x] Yes
+- [ ] No    
+  
+:heavy_check_mark: The revision differs in tone or emotion compared to the original
 
 **Explanation**:    
 The revision omits details about Jonathan Majors' confession about his aggressive behaviour. The phrase "You won't believe" adds sensationalism not present in the original headline.

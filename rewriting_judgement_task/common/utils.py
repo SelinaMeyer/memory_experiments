@@ -73,29 +73,28 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
     style = st.radio("Is the language style of the revised headline appropriate?",
                         ["Yes", "No"], key=10+index, index=None)
     
-    grammar, awkward, register, inconsistent = False, False, False, False
+    grammar, awkward, inconsistent = False, False, False
     if style == "No":
-        style_col = st.columns(4)
+        style_col = st.columns(3)
         with style_col[0]:
             grammar = st.checkbox("Grammar")
         with style_col[1]:
             awkward = st.checkbox("Awkward Style")
         with style_col[2]:
-            register = st.checkbox("Register")
-        with style_col[3]:
             inconsistent = st.checkbox("Inconsistent Style")
 
-    style_subclass = [grammar, awkward, register, inconsistent]
+    style_subclass = [grammar, awkward, inconsistent]
 
     if st.toggle("Show guidelines for rating style"):
         st.markdown("""          
 **Check "no" if any of the following are found in the revision and check all that apply:**
 * **Grammar**: The revision contains grammar or language errors
 * **Awkward Style**: The revision is grammatical, but unnatural as a news headline or awkward (e.g it involves excessive wordiness or overly embedded clauses)
-* **Register**: The revision does not match the tone or level of formality exhibited by the original headline. The inclusion of first/second person pronouns generally changes how personal the headline is, which in this case does not qualify as a shift in formality
 * **Inconsistent Style**: The style or tone is inconsistent within the revision (e.g. factual, dry information is paired with sensationalism)
         """)
     st.write("\n\n")
+
+    emotion_shift = st.checkbox("The revision differs in tone or emotion compared to the original", key = 5*index+3)
 
     comment_input = st.text_input(key = 10 * index + 8, label = "Comments (optional)", value="", help="Optional free text for comments and thoughts", max_chars=1000)
 
@@ -110,7 +109,7 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
         "revision": question["revision"],
     }
     
-    return return_sample, accuracy, accuracy_subclass, style, style_subclass, comment_input, next_input
+    return return_sample, accuracy, accuracy_subclass, style, style_subclass, emotion_shift, comment_input, next_input
 
 def get_item_progress(current_stage:str, user_id:str):
     conn = st.session_state.conn

@@ -26,10 +26,10 @@ else:
     back_button = st.button(label="Back", key = 10 * index + 7)
 
     # print text and widgets
-    question, accuracy, accuracy_subclass, style, style_subclass, comment_input, next_input = utils.print_annotation_schema_sliders("qualification", index)
+    question, accuracy, accuracy_subclass, style, style_subclass, emotion_shift, comment_input, next_input = utils.print_annotation_schema_sliders("qualification", index)
 
     annotation = {"question": question, "accuracy": accuracy, "accuracy_subclass": accuracy_subclass,
-                   "style": style, "style_subclass": style_subclass, "comment": comment_input}
+                   "style": style, "style_subclass": style_subclass, "emotion_shift": emotion_shift, "comment": comment_input}
     samples = core_utils.read_json_from_file(core_utils.TASK_INFO["rewriting_judgement_task"]["qualification_filepath"])
 
     if next_input:
