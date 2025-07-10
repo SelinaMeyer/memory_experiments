@@ -1,4 +1,4 @@
-# Introduction to the Ambiguity Annotation Task
+# Introduction to the Headline Revision Annotation Task
 
 ## Overview
 
