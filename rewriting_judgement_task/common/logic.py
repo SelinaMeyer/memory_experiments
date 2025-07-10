@@ -9,11 +9,17 @@ def check_if_qualified(annotations: dict) -> bool:
     """
     qualification_questions = read_json_from_file(TASK_INFO["rewriting_judgement_task"]["qualification_filepath"])
 
-    needed_score = 3
-    score = 0
+    needed_accuracy_score = 4
+    needed_style_score = 2
+    accuracy_score = 0
+    style_score = 0
     for question_id in qualification_questions:
-        if (annotations["qualification"][int(question_id)-1]["accuracy"] == qualification_questions[question_id]["correct_accuracy_answer"] and
-        annotations["qualification"][int(question_id)-1]["style"] == qualification_questions[question_id]["correct_style_answer"]):
-            score += 1
-
-    return score >= needed_score
+        if annotations["qualification"][int(question_id)-1]["accuracy"] == qualification_questions[question_id]["correct_accuracy_answer"]:
+            accuracy_score += 1
+        if annotations["qualification"][int(question_id)-1]["style"] == qualification_questions[question_id]["correct_style_answer"]:
+            style_score += 1
+    
+    if (accuracy_score >= needed_accuracy_score and style_score >= needed_style_score):
+        return True
+    else:
+        return False
