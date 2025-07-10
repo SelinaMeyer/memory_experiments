@@ -205,7 +205,6 @@ def handle_back_button(annotation: dict, index: int, samples: dict, subtask="ann
     st.rerun()
 
 
-
 def handle_next_button(annotation: dict, index: int, samples: dict, subtask="annotation", qualification_function=None):
     """
     All-in-one behaviour of the next button: Saves annotation, skips to next relevant sample and finishes the annotation if the end is reached.
