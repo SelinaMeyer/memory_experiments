@@ -21,19 +21,26 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
     else:
         samples = read_json_from_file(TASK_INFO["rewriting_judgement_task"]["annotation_filepath"])
 
-    '''sample_preload = load_annotation(subtask, index)
+    sample_preload = load_annotation(subtask, index)
     if not sample_preload:
-        value_slider, value_nonsensical, value_comment = None, None, ""
+        value_accuracy, value_style, value_emotion_shift, value_comment_input = None, None, False, ""
     else:
-        value_slider, value_nonsensical, value_comment = (sample_preload["slider"], sample_preload["nonsensical"], sample_preload["comment"])
-        if value_slider in slider_labels:
-            value_slider = slider_labels[value_slider]
-        else:
-            value_slider = None'''
-
+        value_accuracy, value_style, value_emotion_shift, value_comment_input  = (sample_preload["accuracy"], sample_preload["style"], 
+                                                          sample_preload["emotion_shift"], sample_preload["comment"])
+    if value_accuracy == "No":
+        value_misrepresentation, value_omission, value_addition = sample_preload["accuracy_subclass"][0], sample_preload["accuracy_subclass"][1],sample_preload["accuracy_subclass"][2]
+    else:
+        value_misrepresentation, value_omission, value_addition = False, False, False
+    if value_style == "No":
+        print(sample_preload["style_subclass"])
+        value_grammar, value_awkward, value_inconsistent = sample_preload["style_subclass"][0], sample_preload["style_subclass"][1], sample_preload["style_subclass"][2]
+    else:
+        value_grammar, value_awkward, value_inconsistent = False, False, False
     question = samples[str(index)]
     # display the "Sample 1/5" thing
     display_progress(key=subtask)
+
+    print(value_misrepresentation)
 
     st.markdown("Read the following headline and revision")
 
@@ -47,18 +54,20 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
 
     st.write("---")
 
+    radio_index_dict = {"Yes": 0, "No": 1, None: None}
+
     accuracy = st.radio("Does the content in the revised version accurately reflect the content of the source text?",
-                        ["Yes", "No"], key=5+index, index=None)
+                        ["Yes", "No"], key=5+index, index=radio_index_dict[value_accuracy])
     
-    misrepresentation, omission, addition = False, False, False
+    misrepresentation, omission, addition = value_misrepresentation, value_omission, value_addition
     if accuracy == "No":
         accuracy_col = st.columns(3)
         with accuracy_col[0]:
-            misrepresentation = st.checkbox("Misrepresentation")
+            misrepresentation = st.checkbox("Misrepresentation", value=value_misrepresentation)
         with accuracy_col[1]:
-            omission = st.checkbox("Omission")
+            omission = st.checkbox("Omission", value=value_omission)
         with accuracy_col[2]:
-            addition = st.checkbox("Addition")
+            addition = st.checkbox("Addition", value=value_addition)
 
     if st.toggle("Show guidelines for rating accuracy"):
         st.markdown("""
@@ -73,17 +82,17 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
     st.write("\n")
 
     style = st.radio("Is the language style of the revised headline appropriate?",
-                        ["Yes", "No"], key=10+index, index=None)
+                        ["Yes", "No"], key=10+index+7, index=radio_index_dict[value_style])
     
-    grammar, awkward, inconsistent = False, False, False
+    grammar, awkward, inconsistent = value_grammar, value_awkward, value_inconsistent
     if style == "No":
         style_col = st.columns(3)
         with style_col[0]:
-            grammar = st.checkbox("Grammar")
+            grammar = st.checkbox("Grammar", value=value_grammar)
         with style_col[1]:
-            awkward = st.checkbox("Awkward Style")
+            awkward = st.checkbox("Awkward Style", value=value_awkward)
         with style_col[2]:
-            inconsistent = st.checkbox("Inconsistent Style")
+            inconsistent = st.checkbox("Inconsistent Style", value=value_inconsistent)
 
     style_subclass = [grammar, awkward, inconsistent]
 
@@ -96,12 +105,18 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
         """)
     st.write("\n\n")
 
-    emotion_shift = st.checkbox("The revision differs in tone or emotion compared to the original", key = 5*index+3)
+    emotion_shift = st.checkbox("The revision differs in tone or emotion compared to the original", key = 5*index+3, value=value_emotion_shift)
 
-    comment_input = st.text_input(key = 10 * index + 8, label = "Comments (optional)", value="", help="Optional free text for comments and thoughts", max_chars=1000)
+    comment_input = st.text_input(key = 10 * index + 3, label = "Comments (optional)", value=value_comment_input, help="Optional free text for comments and thoughts", max_chars=1000)
 
-    if accuracy and style:
-        next_input = st.button(key = 10 * index + 9, label="Next", help="Save this annotation and advance to the next one.")
+    if accuracy == "Yes" and style =="Yes":
+        next_input = st.button(key = 10 * index + 2, label="Next", help="Save this annotation and advance to the next one.")
+    elif accuracy == "No" and style=="Yes" and (misrepresentation != False or omission != False or addition != False):
+        next_input = st.button(key = 10 * index + 2, label="Next", help="Save this annotation and advance to the next one.")
+    elif accuracy == "Yes" and style == "No" and (grammar != False or awkward != False or inconsistent != False):
+        next_input = st.button(key = 10 * index + 2, label="Next", help="Save this annotation and advance to the next one.")
+    elif accuracy == "No" and style =="No" and (grammar != False or awkward != False or inconsistent != False) and (misrepresentation != False or omission != False or addition != False):
+        next_input = st.button(key = 10 * index + 2, label="Next", help="Save this annotation and advance to the next one.")
     else:
         next_input = None
 
@@ -119,15 +134,17 @@ def get_item_progress(user_id:str):
 
     cursor.execute(f"SELECT data FROM user_data WHERE user_id = %s", (user_id,))
     result = cursor.fetchone()
+    if not result:
+        return 0, []
+    print(result)
     data = result[0]
     index = data.get("index", 0)
-
     keys = data.get("keys", [])
 
     return index, keys
 
 def skip_to_next_sample(index: int, samples: dict, grouping: int, direction: int=1, 
-                        subtask: str="annotation", qualification_function=None) -> int:
+                        subtask: str="annotation", qualification_function=None) -> tuple[int, list]:
     """
     From the specified index, move in the specified direction to find the next sample relevant to the group.
 
@@ -137,26 +154,30 @@ def skip_to_next_sample(index: int, samples: dict, grouping: int, direction: int
     :param direction: 1 for going forward, -1 for going backward
     :param subtask: e.g. annotation or qualification
     :param qualification function: Function to evaluate whether qualification was passed, not needed if subtask!=qualification
-    :return: Index of the next (or previous) sample
+    :return: Tuple (index of the next sample, list of shuffled keys)
     """
-
-    shuffled_keys, index = get_item_progress(st.session_state.user_id)
-
-    if shuffled_keys not in st.session_state:
+    if "shuffled_keys" not in st.session_state:
+        print("Getting item progress")
+        index, shuffled_keys = get_item_progress(st.session_state.user_id)
         if not shuffled_keys:
             print("No shuffled keys found, creating new ones")
-            shuffled_keys = [key for key, value in samples.items() if value["grouping"] == st.session_state.user[3]]
+            shuffled_keys = [key for key, value in samples.items() if value["grouping"] == grouping]
             random.shuffle(shuffled_keys)
             index = 0
 
         st.session_state.shuffled_keys = shuffled_keys
         print("Added shuffled keys:", st.session_state.shuffled_keys)
-        st.session_state.index = index
-        print("current index:", st.session_state.index)
-
+        st.session_state.progress = index
+        print("current index:", st.session_state.progress)
+    print("Session state keys in skip function", st.session_state.shuffled_keys)
+    #index = st.session_state.index
+    #shuffled_keys = st.session_state.shuffled_keys
+    print("shuffled_keys:", st.session_state.shuffled_keys)
+    print("index:", index)
+    print("Direction:", direction)
     index += direction
 
-    return index, shuffled_keys
+    return index, st.session_state.shuffled_keys
 
 
 def handle_back_button(annotation: dict, index: int, samples: dict, subtask="annotation"):
@@ -170,11 +191,11 @@ def handle_back_button(annotation: dict, index: int, samples: dict, subtask="ann
     """
     # don't save when pressing back on the newest sample, since it will otherwise get skipped when returning later
     if index < user_repository.get_checkpoint(key=subtask, print=False):
-        user_repository.save_one_annotation(st.session_state.user_id, subtask, st.session_state.shuffled_keys[index], annotation)
+        user_repository.save_one_annotation(st.session_state.user_id, subtask, int(st.session_state.shuffled_keys[index]), annotation)
 
     grouping = st.session_state.user[3]
     # skip backwards over the samples of the other groups to arrive at the new index
-    new_index = skip_to_next_sample(index, samples, grouping, direction=-1)
+    new_index, keys = skip_to_next_sample(index, samples, grouping, direction=-1)
 
     if subtask == "qualification":
         st.session_state.qualification_progress = new_index
@@ -195,14 +216,16 @@ def handle_next_button(annotation: dict, index: int, samples: dict, subtask="ann
     :param subtask: The current subtask, e.g. annotation or qualification
     :param qualification_function: If subtask=qualification, a function that evaluates success of qualification given user annotations
     """
-    user_repository.save_one_annotation(st.session_state.user_id, subtask, st.session_state.shuffled_keys[index], annotation)
+    user_repository.save_one_annotation(st.session_state.user_id, subtask, int(st.session_state.shuffled_keys[index]), annotation)
 
-    if index >= len(samples):
+    if st.session_state.progress >= len(st.session_state.shuffled_keys):
         finish_subtask(subtask, qualification_function=qualification_function)
     else:
+        print("Index passed to next saple function", index)
+        print(st.session_state.shuffled_keys)
         grouping = st.session_state.user[3]
         # proceed until we find the next sample relevant for the grouping
-        new_index = skip_to_next_sample(index, samples, grouping, direction=1)
+        new_index, keys = skip_to_next_sample(index, samples, grouping, direction=1)
 
     if subtask == "qualification":
         st.session_state.qualification_progress = new_index

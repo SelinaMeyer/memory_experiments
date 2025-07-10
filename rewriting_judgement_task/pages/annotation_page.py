@@ -25,23 +25,28 @@ elif user_repository.check_if_done(st.session_state.user_id):
     st.write("# " + os.getenv("PROLIFIC_COMPLETION_CODE"))
 else:
     index = int(st.session_state.progress)
-    print(index)
-    print(st.session_state.shuffled_keys[index])
     back_button = st.button(label="Back", key = 10 * index + 7, help="Go back to the previous sample.")
 
     question, accuracy, accuracy_subclass, style, style_subclass, emotion_shift, comment_input, next_input =  utils.print_annotation_schema_sliders("annotation", int(st.session_state.shuffled_keys[index]))
     progression_data = {}
     progression_data["keys"] = st.session_state.shuffled_keys
     progression_data["index"] = index
+    print("Progression data", progression_data)
     annotation = {"question": question, "accuracy": accuracy, "accuracy_subclass": accuracy_subclass,
                    "style": style, "style_subclass": style_subclass, "emotion_shift": emotion_shift, "comment": comment_input}
     if next_input:
-        if index < len(st.session_state.shuffled_keys):
-            utils.handle_next_button(annotation, index, samples, "annotation")
+        print("Next input received")
+        if index < len(st.session_state.shuffled_keys) - 1:
+            print(len(st.session_state.shuffled_keys))
+            print("index smaller than shuffled key lenth")
+            print("Current index: ", index)
+            print("Current sample:", st.session_state.shuffled_keys[index])
             user_repository.update_demographics(st.session_state.user_id, progression_data)
+            utils.handle_next_button(annotation, index, samples, "annotation")
         else: 
+            print("finishing subtask")
             finish_subtask()
 
     if back_button:
-        utils.handle_back_button(annotation, index, samples, "annotation")
         user_repository.update_demographics(st.session_state.user_id, progression_data)
+        utils.handle_back_button(annotation, index, samples, "annotation")

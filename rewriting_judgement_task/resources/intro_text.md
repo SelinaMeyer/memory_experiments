@@ -7,21 +7,21 @@ You will see two versions of a news headline, one marked as "Original", the othe
 You are asked to judge the following categories:
 
 
-##### 1. Accuracy: Does the content in the revised version accurately reflect the content of the source text? 
+##### 1. Accuracy: Does the content in the revised version accurately reflect the content of the source text?    
 There are three ways, in which accuracy is commonly violated, which can also occurr together:
 
 * **Misrepresentation**: The revision misrepresents information provided in the original headline       
 * **Addition**: The revision includes content not present in the original headline        
 * **Omission**: The revision is missing content present in the original headline
 
-##### 2. Style: Is the language style of the revised headline appropriate? 
+##### 2. Style: Is the language style of the revised headline appropriate?    
 Inappropriate style can manifest in various forms, that can also occurr together: 
 
 * **Grammar**: The revision contains grammar or language errors   
 * **Awkward Style**: The revision is grammatical, but unnatural as a news headline or awkward (e.g it involves excessive wordiness or overly embedded clauses)    
 * **Inconsistent Style**: The style or tone is inconsistent within the revision (e.g. factual, dry information is paired with sensationalism)
 
-You can also indicate if a revision differs in tone or emotion compared to the original version.    
+If a revision differs in tone or emotion compared to the original version, you can indicate this in a separate checkbox.    
 Also, feel free to add comments in the comment field. You can even suggest revision improvements, if you can think of a better phrasing (but this is not the main goal of this annotation task)
 
 ---
@@ -33,17 +33,17 @@ Jonathan Majors reportedly admits to being ‘aggressive’ with ex-girlfriend i
 **Revision**    
 You need to hear Jonathan Majors' disturbing admission about being 'aggressive' with an ex-girlfriend   
 
-1. Does the content in the revised version accurately reflect the content of the source text?
+1. Does the content in the revised version accurately reflect the content of the source text?   
 
-- [x] Yes
-- [ ] No
+:white_check_mark: Yes      
+:black_square_button: No
 
-2. Is the language style of the revised headline appropriate?
+2. Is the language style of the revised headline appropriate?   
 
-- [x] Yes
-- [ ] No
+:white_check_mark: Yes      
+:black_square_button: No
 
-:heavy_check_mark: The revision differs in tone or emotion compared to the original
+:white_check_mark: The revision differs in tone or emotion compared to the original
 
 **Explanation**: 
 The headline is appropriate as a news headline and accurately reflects the content of the original headline. The addition of the word "disturbing" changes the emotional tone of the revision compared to the original.
@@ -56,17 +56,16 @@ Betty White, TV's Golden Girl, celebrated at stamp ceremony in Los Angeles
 **Revision**    
 You'll Love This: Betty White's Timeless Appeal Celebrated with a New Stamp in Los Angeles  
 
-1. Does the content in the revised version accurately reflect the content of the source text?
-- [ ] Yes
-- [x] No    
-    :heavy_check_mark: Misrepresentation  :heavy_check_mark: Addition  :black_square_button: Omission 
+1. Does the content in the revised version accurately reflect the content of the source text?   
+:black_square_button: Yes   
+:white_check_mark: No    
+    :white_check_mark: Misrepresentation  :white_check_mark: Addition  :black_square_button: Omission 
 
-2. Style
-- [ ] Yes
-- [x] No    
-   :black_square_button: Grammar  :black_square_button: Awkward Style :black_square_button: Inconsistent Style 
+2. Is the language style of the revised headline appropriate?     
+:white_check_mark: Yes  
+:black_square_button: No    
 
-:heavy_check_mark: The revision differs in tone or emotion compared to the original
+:white_check_mark: The revision differs in tone or emotion compared to the original
 
 **Explanation**: 
 The revision adds specifics not present in the original headline by claiming that Betty White's "timeless appeal" is celebrated. It also misrepresents the original headline by saying that a new stamp was created for this cause, which is not clearly mentioned in the original. The revision is also more emotional and praising than the original.
@@ -79,14 +78,14 @@ Jonathan Majors reportedly admits to being ‘aggressive’ with ex-girlfriend i
 **Revision**    
 You'll Want to Listen to This Leaked Audio of Jonathan Majors' Aggressive Encounter 
 
-1. Does the content in the revised version accurately reflect the content of the source text?
-- [ ] Yes
-- [x] No    
-    :heavy_check_mark: Misrepresentation  :black_square_button: Addition  :black_square_button: Omission 
+1. Does the content in the revised version accurately reflect the content of the source text?   
+:black_square_button: Yes   
+:white_check_mark: No    
+    :white_check_mark: Misrepresentation  :black_square_button: Addition  :black_square_button: Omission 
 
-2. Is the language style of the revised headline appropriate?
-- [x] Yes
-- [ ] No
+2. Is the language style of the revised headline appropriate?   
+:white_check_mark: Yes  
+:black_square_button: No
 
 
 :black_square_button: The revision differs in tone or emotion compared to the original
@@ -102,15 +101,15 @@ Jonathan Majors reportedly admits to being ‘aggressive’ with ex-girlfriend i
 **Revision**    
 Jonathan Majors tells us he was ‘aggressive’ with his ex-girlfriend in audio you have to hear
 
-1. Does the content in the revised version accurately reflect the content of the source text?
-- [x] Yes
-- [ ] No
+1. Does the content in the revised version accurately reflect the content of the source text?   
+:white_check_mark: Yes  
+:black_square_button: No
 
-2. Is the language style of the revised headline appropriate?
-- [ ] Yes
-- [x] No
+2. Is the language style of the revised headline appropriate?   
+:black_square_button: Yes   
+:white_check_mark: No
 
-    :black_square_button: Grammar  :heavy_check_mark: Awkward Style  :black_square_button: Inconsistent Style 
+    :black_square_button: Grammar  :white_check_mark: Awkward Style  :black_square_button: Inconsistent Style 
 
 :black_square_button: The revision differs in tone or emotion compared to the original
 
@@ -125,16 +124,16 @@ FDA recalls thousands of pounds of ground coffee mislabeled as decaffeinated
 **Revision**    
 FDA's recall: Thousands of pounds of mislabeled decaf coffee may impact your coffee routine!
 
-1. Does the content in the revised version accurately reflect the content of the source text?
-- [x] Yes
-- [ ] No    
+1. Does the content in the revised version accurately reflect the content of the source text?   
+:white_check_mark: Yes  
+:black_square_button: No    
 
-2. Style
-- [ ] Yes
-- [x] No    
-   :black_square_button: Grammar  :heavy_check_mark: Awkward Style  :heavy_check_mark: Inconsistent Style 
+2. Is the language style of the revised headline appropriate?       
+:black_square_button: Yes   
+:white_check_mark: No    
+   :black_square_button: Grammar  :white_check_mark: Awkward Style  :white_check_mark: Inconsistent Style 
 
-:heavy_check_mark: The revision differs in tone or emotion compared to the original
+:white_check_mark: The revision differs in tone or emotion compared to the original
 
 **Explanation**: 
 The original is factual, whereas the revision reads awkwardly. The added exclamation mark makes the style of the headline inconsistent in itself: While the beginning of the headline is neutral in tone, the second part is more dramatic. The tone of the revision is more sensational than the original.
@@ -147,13 +146,13 @@ Jonathan Majors reportedly admits to being ‘aggressive’ with ex-girlfriend i
 **Revision**    
 You can listen to Jonathan Majors confess to aggression against his ex in newly released audio.
 
-1. Does the content in the revised version accurately reflect the content of the source text?
-- [x] Yes
-- [ ] No
+1. Does the content in the revised version accurately reflect the content of the source text?   
+:white_check_mark: Yes  
+:black_square_button: No
 
-2. Is the language style of the revised headline appropriate?
-- [x] Yes
-- [ ] No
+2. Is the language style of the revised headline appropriate?   
+:white_check_mark: Yes  
+:black_square_button: No 
 
 :black_square_button: The revision differs in tone or emotion compared to the original
 
@@ -168,16 +167,16 @@ Jonathan Majors reportedly admits to being ‘aggressive’ with ex-girlfriend i
 **Revision**    
 You won’t believe what Jonathan Majors admitted about his past in this new audio clip
 
-1. Does the content in the revised version accurately reflect the content of the source text?
-- [ ] Yes
-- [x] No    
-    :black_square_button: Misrepresentation  :black_square_button: Addition  :heavy_check_mark: Omission 
+1. Does the content in the revised version accurately reflect the content of the source text?   
+:black_square_button: Yes   
+:white_check_mark: No    
+    :black_square_button: Misrepresentation  :black_square_button: Addition  :white_check_mark: Omission 
 
-2. Style
-- [x] Yes
-- [ ] No    
+2. Is the language style of the revised headline appropriate?   
+:white_check_mark: Yes    
+:black_square_button: No    
   
-:heavy_check_mark: The revision differs in tone or emotion compared to the original
+:white_check_mark: The revision differs in tone or emotion compared to the original
 
 **Explanation**:    
 The revision omits details about Jonathan Majors' confession about his aggressive behaviour. The phrase "You won't believe" adds sensationalism not present in the original headline.
