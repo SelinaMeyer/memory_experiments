@@ -32,7 +32,7 @@ else:
     progression_data["keys"] = st.session_state.shuffled_keys
     progression_data["index"] = index
     print("Progression data", progression_data)
-    annotation = {"question": question, "accuracy": accuracy, "accuracy_subclass": accuracy_subclass,
+    annotation = {"sample_id": st.session_state.shuffled_keys[index], "question": question, "accuracy": accuracy, "accuracy_subclass": accuracy_subclass,
                    "style": style, "style_subclass": style_subclass, "emotion_shift": emotion_shift, "comment": comment_input}
     if next_input:
         print("Next input received")
