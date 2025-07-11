@@ -57,7 +57,7 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
     radio_index_dict = {"Yes": 0, "No": 1, None: None}
 
     accuracy = st.radio("Does the content in the revised version accurately reflect the content of the source text?",
-                        ["Yes", "No"], key=5+index, index=radio_index_dict[value_accuracy])
+                        ["Yes", "No"], key=5*index+8, index=radio_index_dict[value_accuracy])
     
     misrepresentation, omission, addition = value_misrepresentation, value_omission, value_addition
     if accuracy == "No":
@@ -82,7 +82,7 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
     st.write("\n")
 
     style = st.radio("Is the language style of the revised headline appropriate?",
-                        ["Yes", "No"], key=10+index+7, index=radio_index_dict[value_style])
+                        ["Yes", "No"], key=10*index+9, index=radio_index_dict[value_style])
     
     grammar, awkward, inconsistent = value_grammar, value_awkward, value_inconsistent
     if style == "No":
@@ -107,18 +107,26 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
 
     emotion_shift = st.checkbox("The revision differs in tone or emotion compared to the original", key = 5*index+3, value=value_emotion_shift)
 
-    comment_input = st.text_input(key = 10 * index + 3, label = "Comments (optional)", value=value_comment_input, help="Optional free text for comments and thoughts", max_chars=1000)
+    comment_input = st.text_input(key = 10 * index + 6, label = "Comments (optional)", value=value_comment_input, help="Optional free text for comments and thoughts", max_chars=1000)
+
+    can_enable_next = False
 
     if accuracy == "Yes" and style =="Yes":
-        next_input = st.button(key = 10 * index + 2, label="Next", help="Save this annotation and advance to the next one.")
-    elif accuracy == "No" and style=="Yes" and (misrepresentation != False or omission != False or addition != False):
-        next_input = st.button(key = 10 * index + 2, label="Next", help="Save this annotation and advance to the next one.")
-    elif accuracy == "Yes" and style == "No" and (grammar != False or awkward != False or inconsistent != False):
-        next_input = st.button(key = 10 * index + 2, label="Next", help="Save this annotation and advance to the next one.")
-    elif accuracy == "No" and style =="No" and (grammar != False or awkward != False or inconsistent != False) and (misrepresentation != False or omission != False or addition != False):
-        next_input = st.button(key = 10 * index + 2, label="Next", help="Save this annotation and advance to the next one.")
-    else:
-        next_input = None
+        can_enable_next = True
+    elif accuracy == "No" and style=="Yes" and (misrepresentation or omission or addition):
+        can_enable_next = True
+    elif accuracy == "Yes" and style == "No" and (grammar or awkward or inconsistent):
+        can_enable_next = True
+    elif accuracy == "No" and style =="No" and (grammar or awkward or inconsistent) and (misrepresentation or omission or addition):
+        can_enable_next = True
+
+    next_input = None
+    if can_enable_next:
+        next_input = st.button(
+            label="Next",
+            key=f"next_button_{index}",
+            help="Save this annotation and advance to the next one."
+        )
 
     return_sample = {
         "index": str(index),
