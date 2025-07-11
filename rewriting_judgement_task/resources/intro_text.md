@@ -189,7 +189,7 @@ You will first have to pass the qualification test, which consists of five quest
 
 **If you fail at the qualification test**: You will not be able to start the annotation. ***IMPORTANT***: **Remember to copy the Screen-Out Completion Code that will be displayed to Prolific.** If we see that an honest effort was made, you will get a small amount of money as compensation for your time.
 
-**If you succeed at the qualification test**: Once you pass the qualification test, you will automatically unlock access to the annotation page. It is structurally identical to the qualification. Each annotator is assigned 20 samples. We expect each sample to take 30-60 seconds, so it will likely take around 15 minutes in total.
+**If you succeed at the qualification test**: Once you pass the qualification test, you will automatically unlock access to the annotation page. It is structurally identical to the qualification. Each annotator is assigned 21 samples. We expect each sample to take 30-60 seconds, so it will likely take around 15 minutes in total.
 
 Your progress for both qualification and annotation is **saved automatically** anytime you press the *NEXT* button.
 
