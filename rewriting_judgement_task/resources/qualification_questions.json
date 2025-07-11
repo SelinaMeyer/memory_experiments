@@ -5,8 +5,7 @@
         "correct_accuracy_answer": "Yes",
         "correct_accuracy_subclass": [false, false, false],
         "correct_style_answer": "Yes",
-        "correct_style_subclass": [false, false, false],
-        "grouping":0
+        "correct_style_subclass": [false, false, false]
     },
     "2": {
         "original": "Visas revoked for students at universities in Southern states amid crackdown",
@@ -14,8 +13,7 @@
         "correct_accuracy_answer": "No",
         "correct_accuracy_subclass": [true, true, false],
         "correct_style_answer": "No",
-        "correct_style_subclass": [true, false, false],
-        "grouping":0
+        "correct_style_subclass": [true, false, false]
     },
     "3": {
         "original": "Kennedy’s Plan to Send Health Officials to ‘Indian Country’ Angers Native Leaders",
@@ -23,8 +21,7 @@
         "correct_accuracy_answer": "No",
         "correct_accuracy_subclass": [true, true, true],
         "correct_style_answer": "No",
-        "correct_style_subclass": [false, true, false],
-        "grouping":0
+        "correct_style_subclass": [false, true, false]
     },
     "4": {
         "original": "In 15 Years, 80,000 Homes in the New York Area May Be Lost to Flooding",
@@ -32,7 +29,6 @@
         "correct_accuracy_answer": "Yes",
         "correct_accuracy_subclass": [false, false, false],
         "correct_style_answer": "Yes",
-        "correct_style_subclass": [false, false, false],
-        "grouping":0
+        "correct_style_subclass": [false, false, false]
     }
 }
