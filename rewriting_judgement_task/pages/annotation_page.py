@@ -45,6 +45,7 @@ else:
             utils.handle_next_button(annotation, index, samples, "annotation")
         else: 
             print("finishing subtask")
+            user_repository.save_one_annotation(st.session_state.user_id, "annotation", int(st.session_state.shuffled_keys[index]), annotation)
             finish_subtask()
 
     if back_button:
