@@ -3,8 +3,10 @@ import os
 
 import streamlit as st
 
-from core.scripts.utils import authenticate_id, TASK_INFO
+from core.scripts.utils import authenticate_id, TASK_INFO, finish_qualification
 from core.scripts import user_repository, database_repository
+from rewriting_judgement_task.common.logic import check_if_qualified
+import time
 
 st.session_state.page = "authentication_page"
 
@@ -33,6 +35,8 @@ def log_in(user_id: str, task=None, as_admin=False) -> None:
             return
     st.session_state.user_id = target_id
     st.session_state.user = list(user)
+    if task=="rewriting_judgement_task":
+        finish_qualification(check_if_qualified)
     st.write("Welcome!")
     st.rerun()
 

@@ -24,6 +24,8 @@ else:
 
     ## Are you here for annotation?
                 
-    **You have successfully logged in as an annotator.**  
-    Please read the task's introduction page before starting the qualification test.
+    **Thanks for taking part in the second round of our annotation task!**  
+    Since you already passed the qualification test in the first round, you can proceed directly to the annotation.
+    There are only nine samples for you to annotate this time, so it shouldn't take up much of your time.      
+    In case you need a refresher on the task, you can find it in the "Headline Rewriting Judgement Intro" Tab
     """)

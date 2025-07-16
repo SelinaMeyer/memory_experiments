@@ -9,7 +9,7 @@ if "qualification_progress" not in st.session_state:
 st.session_state.page = "rewriting_judgement_task_qualification_page_sample" + str(st.session_state.qualification_progress)
 
 # user qualification of -1 or 1 mean that the test was already attempted
-user_qualification = user_repository.get_qualification()
+user_qualification = 1#user_repository.get_qualification()
 if user_qualification == 1:
     st.markdown("\n## You have successfully completed the qualification test. \n\n Select **Annotation** on the navigation bar to your left to do some annotating.")
 elif user_qualification == -1:

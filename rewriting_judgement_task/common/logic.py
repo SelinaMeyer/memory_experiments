@@ -7,7 +7,7 @@ def check_if_qualified(annotations: dict) -> bool:
     :param annotations: user's annotation in dict form, should have a 'qualification' key
     :return bool: True if passed, False if not
     """
-    qualification_questions = read_json_from_file(TASK_INFO["rewriting_judgement_task"]["qualification_filepath"])
+    '''qualification_questions = read_json_from_file(TASK_INFO["rewriting_judgement_task"]["qualification_filepath"])
 
     needed_accuracy_score = 4
     needed_style_score = 2
@@ -22,4 +22,5 @@ def check_if_qualified(annotations: dict) -> bool:
     if (accuracy_score >= needed_accuracy_score and style_score >= needed_style_score):
         return True
     else:
-        return False
+        return False'''
+    return True
