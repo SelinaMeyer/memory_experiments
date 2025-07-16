@@ -35,8 +35,6 @@ def log_in(user_id: str, task=None, as_admin=False) -> None:
             return
     st.session_state.user_id = target_id
     st.session_state.user = list(user)
-    if task=="rewriting_judgement_task":
-        finish_qualification(check_if_qualified)
     st.write("Welcome!")
     st.rerun()
 

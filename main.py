@@ -224,9 +224,9 @@ elif st.session_state.user_id:
     
     elif utils.authenticate_id("rewriting_judgement_task", st.session_state.user_id):
         if user_repository.get_qualification() != 1:
-            available_pages["Rewriting Judgement Task"] = [rewriting_judgement_start_page, rewriting_judgement_annotation_page]
+            available_pages["Rewriting Judgement Task"] = [rewriting_judgement_start_page, rewriting_judgement_qualification_page]
         else: 
-            available_pages["Rewriting Judgement Task"] = [rewriting_judgement_start_page, rewriting_judgement_annotation_page] # rewriting_judgement_qualification_page,
+            available_pages["Rewriting Judgement Task"] = [rewriting_judgement_start_page, rewriting_judgement_qualification_page, rewriting_judgement_annotation_page] 
     
     available_pages["Other"] = [logout_page]
 

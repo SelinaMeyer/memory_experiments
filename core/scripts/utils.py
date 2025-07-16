@@ -72,7 +72,7 @@ TASK_INFO = {
         "group_assignment": "post-qualification"
     },
     "rewriting_judgement_task": {
-        "annotation_filepath": "rewriting_judgement_task/resources/annotation_samples_round_2.json",
+        "annotation_filepath": "rewriting_judgement_task/resources/annotation_samples.json",
         "qualification_filepath": "rewriting_judgement_task/resources/qualification_questions.json",
         "number_of_annotator_groups": 16,
         "group_assignment": "post-qualification"
@@ -210,7 +210,7 @@ def finish_qualification(qualification_function: str):
     annotations = user[5]
     # check if the qualification was successful and set user state accordingly
     if qualification_function(annotations):
-        st.write("Please wait a moment...")
+        st.write("The qualification test has ended. Please wait a moment...")
         user_repository.set_qualification(st.session_state.user_id)
         # Since the user is qualified, automatic group assignment can now take place...
         if "group_assignment" in TASK_INFO[user[1]] and TASK_INFO[user[1]]["group_assignment"] == "post-qualification":

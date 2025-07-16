@@ -20,12 +20,10 @@ else:
     st.markdown("""
     # Welcome!
                 
-    This is the annotation website for the Natural Language Understanding Research Group at the University of Technology Nuremberg.
+    This is the annotation website for the Natural Language Understanding Lab at UTN Nuremberg.
 
     ## Are you here for annotation?
                 
-    **Thanks for taking part in the second round of our annotation task!**  
-    Since you already passed the qualification test in the first round, you can proceed directly to the annotation.
-    There are only nine samples for you to annotate this time, so it shouldn't take up much of your time.      
-    In case you need a refresher on the task, you can find it in the "Headline Rewriting Judgement Intro" Tab
+    **You have successfully logged in as an annotator.**  
+    Please read the task's introduction page before starting the qualification test.
     """)

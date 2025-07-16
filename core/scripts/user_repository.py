@@ -235,7 +235,7 @@ def assign_to_weakest_group(user_id: str, task: str):
 
     group_counts = {}
     if task=="rewriting_judgement_task":
-        for i in range(8,16):
+        for i in range(8):
             group_counts[i] = 0
     else:
         for i in range(TASK_INFO[task]["number_of_annotator_groups"]):
@@ -248,7 +248,7 @@ def assign_to_weakest_group(user_id: str, task: str):
         if "test" in data["prolific_id"].lower():
             continue
         if task=="rewriting_judgement_task":
-            if group < 8:
+            if group > 7:
                 continue
         group_counts[group] += 1
     print("Group Counts:", group_counts)
