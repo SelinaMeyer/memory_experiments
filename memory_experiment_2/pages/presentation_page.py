@@ -39,7 +39,7 @@ hide_streamlit_style = """
                 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 progression_data = {}
-samples = read_json_from_file(TASK_INFO["memory_experiment"]["annotation_filepath"])
+samples = read_json_from_file(TASK_INFO["memory_experiment_2"]["annotation_filepath"])
 shuffled_keys, index = user_repository.get_item_progress("presentation_keys", st.session_state.user_id)
 placeholder = st.empty()
 user_repository.set_progress(st.session_state.user_id, 1)
@@ -62,17 +62,18 @@ if "shuffled_keys_presentation" not in st.session_state:
     st.session_state.index = index
     print("current index:", st.session_state.index)
 
-while st.session_state.index < len(st.session_state.shuffled_keys_presentation): 
-    print("Progress: ", st.session_state.index)
-    index = int(st.session_state.progress)
-    key = st.session_state.shuffled_keys_presentation[st.session_state.index]
-    placeholder.html(f"<h2>{samples[key]["headline"]}")
-    time.sleep(10)
-    st.session_state.index += 1
-    progression_data["presentation_keys"] = st.session_state.shuffled_keys_presentation
-    progression_data["index"] = st.session_state.index
-    print("shuffled_keys to save: ", st.session_state.shuffled_keys_presentation)
-    user_repository.update_demographics(st.session_state.user_id, progression_data)
-    print("In loop, presented samples: ", st.session_state.index)
+with st.empty():
+    while st.session_state.index < len(st.session_state.shuffled_keys_presentation): 
+        print("Progress: ", st.session_state.index)
+        index = int(st.session_state.progress)
+        key = st.session_state.shuffled_keys_presentation[st.session_state.index]
+        st.image(f"memory_experiment_2/resources/imgs/{key}.png", width=1000)
+        time.sleep(10)
+        st.session_state.index += 1
+        progression_data["presentation_keys"] = st.session_state.shuffled_keys_presentation
+        progression_data["index"] = st.session_state.index
+        print("shuffled_keys to save: ", st.session_state.shuffled_keys_presentation)
+        user_repository.update_demographics(st.session_state.user_id, progression_data)
+        print("In loop, presented samples: ", st.session_state.index)
 
-st.switch_page("memory_experiment/pages/distractor_page.py")
+st.switch_page("memory_experiment_2/pages/distractor_page.py")

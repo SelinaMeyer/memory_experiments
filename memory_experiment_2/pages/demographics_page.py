@@ -100,4 +100,4 @@ if submitted:
     demographics["further_comments"] = further_comments
     demographics["experiment_end_time"] = time.time()
     user_repository.update_demographics(st.session_state.user_id, demographics)
-    st.switch_page("memory_experiment/pages/thank_you_page.py")
+    st.switch_page("memory_experiment_2/pages/thank_you_page.py")
