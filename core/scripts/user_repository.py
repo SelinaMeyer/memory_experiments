@@ -234,12 +234,8 @@ def assign_to_weakest_group(user_id: str, task: str):
     users = cursor.fetchall()
 
     group_counts = {}
-    if task=="rewriting_judgement_task":
-        for i in range(8):
-            group_counts[i] = 0
-    else:
-        for i in range(TASK_INFO[task]["number_of_annotator_groups"]):
-            group_counts[i] = 0
+    for i in range(TASK_INFO[task]["number_of_annotator_groups"]):
+        group_counts[i] = 0
 
     for user in users:
         u_id, user_task, qualified, group, progress, _, data = user
@@ -247,10 +243,6 @@ def assign_to_weakest_group(user_id: str, task: str):
             continue
         if "test" in data["prolific_id"].lower():
             continue
-        if task=="rewriting_judgement_task":
-            if group > 7:
-                continue
-        group_counts[group] += 1
     print("Group Counts:", group_counts)
 
 
@@ -259,6 +251,9 @@ def assign_to_weakest_group(user_id: str, task: str):
     if task == "eval_ending_task":
         # I have gotten to a point where I really only need group 1 anymore.
         weakest_group = 1
+
+    if task == "rewriting_judgement_task":
+        weakest_group = 6
 
     print(task, group_counts, weakest_group)
 
