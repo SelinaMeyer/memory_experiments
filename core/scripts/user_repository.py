@@ -253,7 +253,7 @@ def assign_to_weakest_group(user_id: str, task: str):
         weakest_group = 1
 
     if task == "rewriting_judgement_task":
-        weakest_group = 6
+        weakest_group = 0
 
     print(task, group_counts, weakest_group)
 
