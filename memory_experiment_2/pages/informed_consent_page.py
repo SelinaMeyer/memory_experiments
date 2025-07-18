@@ -109,7 +109,7 @@ if not user:
                     user_repository.create_user(target_id, task=task, data={"prolific_id": prolific_id})
                     user = user_repository.get_user(target_id)
                     st.session_state.user = list(user)
-                    user_repository.assign_to_weakest_group(target_id, "memory_experiment_2")
+                    user_repository.assign_to_weakest_group(st.session_state.user_id, user[1])
                     st.switch_page("memory_experiment_2/pages/Experiment_description_page.py")
                 else:
                     st.error("Captcha is incorrect. Please try again.")
