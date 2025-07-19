@@ -133,7 +133,8 @@ def update_annotation(user_id: str, sample_id,  cred_rating: str):
     # Step 2: Navigate to annotations["recognition"]
     recognition_list = data.get("recognition", [])
 
-    if sample_id == 48: # if item is attention test
+    if sample_id == 50: # if item is attention test
+        print("RECEIVED ANNOTATION FOR ATTENTION TEST!")
         recognition_list.append({"headline": "This is an attention test. Please select 4.", 
                      "sample_id": sample_id, "credibility_rating": cred_rating})
     

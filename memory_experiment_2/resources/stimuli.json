@@ -42,5 +42,33 @@
         "avg_word_length": 6.43,
         "perc_long_words": 0.36,
         "num_long_words": 5
-	}
+	},
+ 	"49": {
+        "headline": "This is an attention test. Please select \"Yes, I have seen this before\".",
+        "grouping": 4,
+        "presentation_grouping": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "topic": "distraction",
+        "source": "none",
+        "version": "none",
+        "sample_id": 0
+    },
+    "50": {
+        "headline": "This is an attention test. Please select 4.",
+        "grouping": 5,
+        "presentation_grouping": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "topic": "distraction",
+        "source": "none",
+        "version": "none",
+        "sample_id": 0
+    }
 }
