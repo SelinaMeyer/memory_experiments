@@ -133,7 +133,7 @@ def update_annotation(user_id: str, sample_id,  cred_rating: str):
     # Step 2: Navigate to annotations["recognition"]
     recognition_list = data.get("recognition", [])
 
-    if sample_id == 2: # if item is attention test
+    if sample_id == 48: # if item is attention test
         recognition_list.append({"headline": "This is an attention test. Please select 4.", 
                      "sample_id": sample_id, "credibility_rating": cred_rating})
     
@@ -306,6 +306,8 @@ def assign_to_weakest_group(user_id: str, task: str):
     for user in users:
         u_id, user_task, qualified, group, progress, _, data = user
         if (user_task != task) or (u_id == user_id):
+            continue
+        if qualified==-1:
             continue
         if "test" in data["prolific_id"].lower():
             continue
