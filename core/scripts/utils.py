@@ -76,6 +76,11 @@ TASK_INFO = {
         "qualification_filepath": "rewriting_judgement_task/resources/qualification_questions.json",
         "number_of_annotator_groups": 16,
         "group_assignment": "post-qualification"
+    },
+    "headline_rewriting_task": {
+        "annotation_filepath": "headline_rewriting_task/resources/headlines.json",
+        "qualification_filepath": "headline_rewriting_task/resources/qualification_questions.json",
+        "number_of_annotator_groups": 1
     }
 }
 

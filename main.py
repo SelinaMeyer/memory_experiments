@@ -169,6 +169,15 @@ rewriting_judgement_annotation_page = st.Page(
     "rewriting_judgement_task/pages/annotation_page.py", title="Annotation", icon="🏭"
 )
 
+headline_rewriting_start_page = st.Page(
+    "headline_rewriting_task/pages/introduction_page.py", title="Ambiguous Story Task Intro", icon="📖", url_path="headline_rewriting_task_introduction"
+)
+headline_rewriting_qualification_page = st.Page(
+    "headline_rewriting_task/pages/qualification_page.py", title="Qualification", icon="🔑"
+)
+headline_rewriting_annotation_page = st.Page(
+    "headline_rewriting_task/pages/annotation_page.py", title="Annotation", icon="🏭"
+)
 
 
 # Create navigation bar
@@ -227,6 +236,12 @@ elif st.session_state.user_id:
             available_pages["Rewriting Judgement Task"] = [rewriting_judgement_start_page, rewriting_judgement_qualification_page]
         else: 
             available_pages["Rewriting Judgement Task"] = [rewriting_judgement_start_page, rewriting_judgement_qualification_page, rewriting_judgement_annotation_page] # rewriting_judgement_qualification_page,
+    
+    elif utils.authenticate_id("headline_rewriting_task", st.session_state.user_id):
+        if user_repository.get_qualification() != 1:
+            available_pages["Headline Rewriting Task"] = [headline_rewriting_start_page, headline_rewriting_qualification_page]
+        else: 
+            available_pages["Headline Rewriting Task"] = [headline_rewriting_start_page, headline_rewriting_qualification_page, headline_rewriting_annotation_page] # rewriting_judgement_qualification_page,
     
     available_pages["Other"] = [logout_page]
 

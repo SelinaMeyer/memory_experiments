@@ -1,0 +1,26 @@
+{
+    "1": {
+        "original": "Being aerobically fit in middle age may reduce Alzheimer’s and dementia risk, study says",
+        "revision": "Being aerobically fit in middle age may reduce your Alzheimer’s and dementia risk, study says",
+        "correct_accuracy_answer": "Yes",
+        "correct_accuracy_subclass": [false, false, false],
+        "correct_style_answer": "Yes",
+        "correct_style_subclass": [false, false, false]
+    },
+    "2": {
+        "original": "Visas revoked for students at universities in Southern states amid crackdown",
+        "revision": "If you're in the South, your visa was revoked amid crackdown.",
+        "correct_accuracy_answer": "No",
+        "correct_accuracy_subclass": [true, true, false],
+        "correct_style_answer": "No",
+        "correct_style_subclass": [true, false, false]
+    },
+    "3": {
+        "original": "Kennedy’s Plan to Send Health Officials to ‘Indian Country’ Angers Native Leaders",
+        "revision": "How Kennedy’s Plan of Sending Health Officials to ‘Indian Country’ Affects the Health of You and Me",
+        "correct_accuracy_answer": "No",
+        "correct_accuracy_subclass": [true, true, true],
+        "correct_style_answer": "No",
+        "correct_style_subclass": [false, true, false]
+    }
+}

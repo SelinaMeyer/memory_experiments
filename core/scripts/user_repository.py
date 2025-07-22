@@ -149,6 +149,21 @@ def get_qualification() -> int:
     qualified = st.session_state.user[2]
     return qualified
 
+def get_rewritten_count(user_id: str) -> int:
+    """
+    Get the number of rewritten headlines for the user with the given user id.
+
+    :param user_id: ID-string of user
+    :return: Number of rewritten headlines
+    """
+    user = get_user(user_id)
+    if not user:
+        return 0
+    annotations = user[5]
+    if "annotation" not in annotations:
+        return 0
+    annotations_filtered = [a for a in annotations["annotation"] if not a.get("revision_not_possible")]
+    return len(annotations_filtered)
 
 def get_checkpoint(key, print=True) -> int:
     """
