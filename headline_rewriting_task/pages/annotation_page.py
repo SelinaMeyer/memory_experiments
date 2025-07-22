@@ -44,7 +44,7 @@ else:
             print("finishing subtask")
             user_repository.save_one_annotation(st.session_state.user_id, "annotation", int(st.session_state.shuffled_keys[index]), annotation)
             finish_subtask()
-        elif rewritten_count >= 3:
+        elif rewritten_count >= 14:
             print("finishing subtask")
             user_repository.save_one_annotation(st.session_state.user_id, "annotation", int(st.session_state.shuffled_keys[index]), annotation)
             finish_subtask()
