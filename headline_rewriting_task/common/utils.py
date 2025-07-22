@@ -18,7 +18,7 @@ def print_revision_schema(subtask:str, index:int) -> tuple:
     :return: The stuff to return
     """
 
-    samples = read_json_from_file(TASK_INFO["rewriting_judgement_task"]["annotation_filepath"])
+    samples = read_json_from_file(TASK_INFO["headline_rewriting_task"]["annotation_filepath"])
 
     sample_preload = load_annotation(subtask, index)
     if not sample_preload:
@@ -30,7 +30,7 @@ def print_revision_schema(subtask:str, index:int) -> tuple:
     # display the "Sample 1/5" thing
     display_progress(key=subtask)
 
-    st.markdown("Read the following headline and revise it too include a first or second person pronoun. Make sure your revision retains the original content and tone.")
+    st.markdown("Read the following headline and revise it to include a first or second person pronoun. Make sure your revision retains the original content and tone.")
 
     st.write("---")
 
