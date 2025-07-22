@@ -34,7 +34,7 @@ def print_revision_schema(subtask:str, index:int) -> tuple:
 
     st.write("---")
 
-    st.markdown("**Original**: " + question["original"])
+    st.markdown("**Headline**: " + question["headline"])
 
     st.write("---")
 
