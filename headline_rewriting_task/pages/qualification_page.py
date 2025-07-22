@@ -30,7 +30,7 @@ else:
 
     annotation = {"question": question, "accuracy": accuracy,
                    "style": style}
-    samples = core_utils.read_json_from_file(core_utils.TASK_INFO["rewriting_judgement_task"]["qualification_filepath"])
+    samples = core_utils.read_json_from_file(core_utils.TASK_INFO["headline_rewriting_task"]["qualification_filepath"])
 
     if next_input:
         core_utils.handle_next_button(annotation, index, samples, "qualification", logic.check_if_qualified)

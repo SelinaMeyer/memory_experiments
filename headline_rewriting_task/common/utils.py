@@ -38,19 +38,24 @@ def print_revision_schema(subtask:str, index:int) -> tuple:
 
     st.write("---")
 
-    if revision:
-        revision = st.text_area(label="Your headline revision", value=revision, key=f"revision_{index}")
-        not_revisable = st.checkbox(label="I cannot revise this headline in the specified way", key=f"not_revisable_{index}", value=False)
+    revision = st.text_area(label="Your headline revision", value=revision, key=f"revision_{index}")
+    not_revisable = st.checkbox(label="I cannot revise this headline in the specified way", key=f"not_revisable_{index}", value=False)
 
     st.write("---")
 
     comment_input = st.text_area(label="Optional comment on your revision", key=5*index+8, value=sample_preload["comment"] if sample_preload else "")
 
     next_input = None
-    if revision != "" or not_revisable:
+    if revision != "":
         next_input = st.button(
             label="Next",
             key=f"next_button_{index}",
+            help="Save this annotation and advance to the next one."
+        )
+    elif not_revisable:
+        next_input = st.button(
+            label="Next",
+            key=f"next_button_not_revisable_{index}",
             help="Save this annotation and advance to the next one."
         )
 
