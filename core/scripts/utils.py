@@ -154,7 +154,7 @@ def display_progress(key="annotation", user_id=None, print_progress: bool = True
 
     user_group = user[3]
     task = user[1]
-    max_samples = get_amount_of_samples_for_group(key, task, user_group)
+    max_samples = 15
 
     if not user:
         return "NOT STARTED"

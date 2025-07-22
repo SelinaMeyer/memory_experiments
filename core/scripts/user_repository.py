@@ -162,7 +162,7 @@ def get_rewritten_count(user_id: str) -> int:
     annotations = user[5]
     if "annotation" not in annotations:
         return 0
-    annotations_filtered = [a for a in annotations["annotation"] if not a.get("revision_not_possible")]
+    annotations_filtered = [a for a in annotations["annotation"] if not a.get("revision_not_possible") and a.get("revision") != None]
     return len(annotations_filtered)
 
 def get_checkpoint(key, print=True) -> int:
