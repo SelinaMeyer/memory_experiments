@@ -172,7 +172,7 @@ def skip_to_next_sample(index: int, samples: dict, grouping: int, direction: int
         index, shuffled_keys = get_item_progress(st.session_state.user_id)
         if not shuffled_keys:
             print("No shuffled keys found, creating new ones")
-            shuffled_keys = [key for key, value in samples.items() if value["grouping"] == grouping]
+            shuffled_keys = [key for key, value in samples.items()]
             random.shuffle(shuffled_keys)
             index = 0
 
