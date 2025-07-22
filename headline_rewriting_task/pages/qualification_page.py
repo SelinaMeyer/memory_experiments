@@ -2,7 +2,7 @@ import streamlit as st
 import os
 
 from core.scripts import user_repository, utils as core_utils
-from rewriting_judgement_task.common import logic, utils
+from headline_rewriting_task.common import logic, utils
 
 if "qualification_progress" not in st.session_state:
     st.session_state.qualification_progress = user_repository.get_checkpoint("qualification") or 1

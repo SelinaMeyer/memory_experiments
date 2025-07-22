@@ -6,15 +6,15 @@ Your revision should preserve the original tone and core message as closely as p
 
 For some headlines, this might be easier than for others. Feel free to make changes to the structure or wording of a headline if needed, but make sure the content and tone stays faithful to the original headline. 
 
-# The Annotation Procedure
+## The Annotation Procedure
 
 You will first have to pass the qualification test, which consists of three questions. **You only have one attempt at this.** The qualification test simply asks you to evaluate the accuracy and appropriateness of an existing revision compared to the original headline. It is mostly to filter out bots and should be no problem to English speakers.
 
 **If you fail at the qualification test**: You will not be able to start writing. ***IMPORTANT***: **Remember to copy the Screen-Out Completion Code that will be displayed to Prolific.** If we see that an honest effort was made, you will get a small amount of money as compensation for your time.
 
-**If you succeed at the qualification test**: Once you pass the qualification test, you will automatically unlock access to the writing page. Each writer is assigned 22 stories.
+**If you succeed at the qualification test**: Once you pass the qualification test, you will automatically unlock access to the writing page. Each writer is expected to revise 15 news headlines. If you feel like it is not possible to add a first or second person pronoun to a headline while retaining the content and tone, you can skip it by checking the corrsponding checkbox.
 
-We estimate the task to take on average 25 minutes. We will give additional compensation if it turns out that we underestimated the median time needed to complete it.
+We estimate the task to take on average 20 minutes. We will give additional compensation if it turns out that we underestimated the median time needed to complete it.
 
 Your progress for both qualification and writing is **saved automatically** anytime you press the *NEXT* button.
 
