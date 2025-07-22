@@ -39,17 +39,17 @@ else:
 
     if next_input:
         print("Next input received")
-        if index < len(st.session_state.shuffled_keys) - 1 and get_rewritten_count <= 15:
+        if index >= len(st.session_state.shuffled_keys) - 1 or get_rewritten_count >= 14:
+            print("finishing subtask")
+            user_repository.save_one_annotation(st.session_state.user_id, "annotation", int(st.session_state.shuffled_keys[index]), annotation)
+            finish_subtask()
+        else: 
             print(len(st.session_state.shuffled_keys))
             print("index smaller than shuffled key length and number revisions is less than 15")
             print("Current index: ", index)
             print("Current sample:", st.session_state.shuffled_keys[index])
             user_repository.update_demographics(st.session_state.user_id, progression_data)
             utils.handle_next_button(annotation, index, samples, "annotation")
-        else: 
-            print("finishing subtask")
-            user_repository.save_one_annotation(st.session_state.user_id, "annotation", int(st.session_state.shuffled_keys[index]), annotation)
-            finish_subtask()
 
     if back_button:
         user_repository.update_demographics(st.session_state.user_id, progression_data)
