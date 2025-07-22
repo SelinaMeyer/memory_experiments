@@ -170,7 +170,7 @@ rewriting_judgement_annotation_page = st.Page(
 )
 
 headline_rewriting_start_page = st.Page(
-    "headline_rewriting_task/pages/introduction_page.py", title="Ambiguous Story Task Intro", icon="📖", url_path="headline_rewriting_task_introduction"
+    "headline_rewriting_task/pages/introduction_page.py", title="Headline Rewriting Task Intro", icon="📖", url_path="headline_rewriting_task_introduction"
 )
 headline_rewriting_qualification_page = st.Page(
     "headline_rewriting_task/pages/qualification_page.py", title="Qualification", icon="🔑"
