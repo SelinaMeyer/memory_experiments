@@ -39,7 +39,7 @@ else:
 
     if next_input:
         print("Next input received")
-        if index >= len(st.session_state.shuffled_keys) - 1 or get_rewritten_count >= 14:
+        if index >= len(st.session_state.shuffled_keys) - 1 or get_rewritten_count >= 3:
             print("finishing subtask")
             user_repository.save_one_annotation(st.session_state.user_id, "annotation", int(st.session_state.shuffled_keys[index]), annotation)
             finish_subtask()
