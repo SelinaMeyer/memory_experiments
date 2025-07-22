@@ -12,7 +12,7 @@ You will first have to pass the qualification test, which consists of three ques
 
 **If you fail at the qualification test**: You will not be able to start writing. ***IMPORTANT***: **Remember to copy the Screen-Out Completion Code that will be displayed to Prolific.** If we see that an honest effort was made, you will get a small amount of money as compensation for your time.
 
-**If you succeed at the qualification test**: Once you pass the qualification test, you will automatically unlock access to the writing page. Each writer is expected to revise 15 news headlines. If you feel like it is not possible to add a first or second person pronoun to a headline while retaining the content and tone, you can skip it by checking the corrsponding checkbox.
+**If you succeed at the qualification test**: Once you pass the qualification test, you will automatically unlock access to the writing page. Each writer is expected to revise 15 news headlines. If you feel like it is not possible to add a first or second person pronoun to a headline while retaining the content and tone, you can skip it by checking the corresponding checkbox and you will get a different headline instead.
 
 We estimate the task to take on average 20 minutes. We will give additional compensation if it turns out that we underestimated the median time needed to complete it.
 

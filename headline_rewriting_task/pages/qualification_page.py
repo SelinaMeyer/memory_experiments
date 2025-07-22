@@ -6,7 +6,7 @@ from headline_rewriting_task.common import logic, utils
 
 if "qualification_progress" not in st.session_state:
     st.session_state.qualification_progress = user_repository.get_checkpoint("qualification") or 1
-st.session_state.page = "rewriting_judgement_task_qualification_page_sample" + str(st.session_state.qualification_progress)
+st.session_state.page = "headline_rewriting_task_qualification_page_sample" + str(st.session_state.qualification_progress)
 
 # user qualification of -1 or 1 mean that the test was already attempted
 user_qualification = user_repository.get_qualification()

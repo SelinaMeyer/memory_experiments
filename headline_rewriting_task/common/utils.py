@@ -71,7 +71,7 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
     :return: The stuff to return
     """
     
-    samples = read_json_from_file(TASK_INFO["rewriting_judgement_task"]["qualification_filepath"])
+    samples = read_json_from_file(TASK_INFO["headline_rewriting_task"]["qualification_filepath"])
 
     sample_preload = load_annotation(subtask, index)
     if not sample_preload:
