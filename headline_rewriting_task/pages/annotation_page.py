@@ -35,11 +35,16 @@ else:
     annotation = {"sample_id": st.session_state.shuffled_keys[index], "question": question, "revision": revision, 
                   "revision_not_possible": not_revisable, "comment": comment_input}
     
-    get_rewritten_count = user_repository.get_rewritten_count(st.session_state.user_id)
+    rewritten_count = user_repository.get_rewritten_count(st.session_state.user_id)
+    print(rewritten_count)
 
     if next_input:
         print("Next input received")
-        if index >= len(st.session_state.shuffled_keys) - 1 or get_rewritten_count >= 3:
+        if index >= len(st.session_state.shuffled_keys) - 1:
+            print("finishing subtask")
+            user_repository.save_one_annotation(st.session_state.user_id, "annotation", int(st.session_state.shuffled_keys[index]), annotation)
+            finish_subtask()
+        elif rewritten_count >= 3:
             print("finishing subtask")
             user_repository.save_one_annotation(st.session_state.user_id, "annotation", int(st.session_state.shuffled_keys[index]), annotation)
             finish_subtask()
