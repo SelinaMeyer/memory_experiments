@@ -100,7 +100,8 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
     accuracy = st.radio("Does the content in the revised version accurately reflect the content of the source text?",
                         ["Yes", "No"], key=5*index+8, index=radio_index_dict[value_accuracy])
 
-    if st.toggle("Show guidelines for rating accuracy"):
+    accuracy_rating_toggle = st.toggle("Show guidelines for rating accuracy", key=f"accuracy_rating_toggle", value=True)
+    if accuracy_rating_toggle:
         st.markdown("""
 **Select "no" if any of the following violations are found in the revision:**
 
@@ -113,8 +114,10 @@ def print_annotation_schema_sliders(subtask: str, index: int) -> tuple:
 
     style = st.radio("Is the language style of the revised headline appropriate?",
                         ["Yes", "No"], key=10*index+9, index=radio_index_dict[value_style])
+    
+    style_rating_toggle = st.toggle("Show guidelines for rating style", key=f"style_rating_toggle", value=True)
 
-    if st.toggle("Show guidelines for rating style"):
+    if style_rating_toggle:
         st.markdown("""          
 **Check "no" if any of the following are found in the revision:**
 * **Grammar**: The revision contains grammar or language errors
