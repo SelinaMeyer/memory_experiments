@@ -70,7 +70,7 @@ if st.button("Submit"):
             user_repository.save_one_annotation(st.session_state.user_id, "recall", 1, recall_dict)
             st.session_state.recall_end_time = time.time()
             user_repository.update_demographics(st.session_state.user_id, {"recall_end_time": st.session_state.recall_end_time})
-            st.switch_page("memory_experiment_2/pages/recognition_page.py")
+            st.switch_page("memory_experiment_3/pages/recognition_page.py")
     else:
         textsplit = recall.splitlines()
         recall_dict["recall"] = []
@@ -79,4 +79,4 @@ if st.button("Submit"):
         user_repository.save_one_annotation(st.session_state.user_id, "recall", 1, recall_dict)
         st.session_state.recall_end_time = time.time()
         user_repository.update_demographics(st.session_state.user_id, {"recall_end_time": st.session_state.recall_end_time})
-        st.switch_page("memory_experiment_2/pages/recognition_page.py")
+        st.switch_page("memory_experiment_3/pages/recognition_page.py")

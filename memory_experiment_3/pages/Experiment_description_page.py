@@ -41,4 +41,4 @@ st.html("""<p>In the following, you will see some news headlines. The headlines 
         <p>Are you ready to start the study? <br>The first headline will be presented once you click the "Start Experiment" button below.""")
 
 if st.button("Start Experiment", key="start_experiment_button"):
-    st.switch_page("memory_experiment_2/pages/presentation_page.py")
+    st.switch_page("memory_experiment_3/pages/presentation_page.py")

@@ -40,7 +40,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.html("""<p>Below you will see some news headlines on the screen one after the other. 
          <p>For each headline, please indicate how false or true you personally think it is (scale from 1=false to 7=true).""")
 user_repository.set_progress(st.session_state.user_id, 5)
-samples = read_json_from_file(TASK_INFO["memory_experiment_2"]["annotation_filepath"])
+samples = read_json_from_file(TASK_INFO["memory_experiment_3"]["annotation_filepath"])
 sample_response = {}
 progression_data = {}
 shuffled_keys, index = user_repository.get_item_progress("credibility_keys", st.session_state.user_id)
@@ -68,7 +68,7 @@ credibility_labels = {
 if st.session_state.index < len(st.session_state.shuffled_keys_credibility):
     print("In Fragment!")
     key = st.session_state.shuffled_keys_credibility[st.session_state.index]
-    st.image(f"memory_experiment_2/resources/imgs/{key}.png")
+    st.image(f"memory_experiment_3/resources/imgs_humans/{key}.png")
     user_response = st.segmented_control("How true do you think this news headline is", options=[
         credibility_labels[0],
         credibility_labels[1],
@@ -82,7 +82,7 @@ if st.session_state.index < len(st.session_state.shuffled_keys_credibility):
 else:
     st.session_state.truth_judgement_end_time = time.time()
     user_repository.update_demographics(st.session_state.user_id, {"truth_judgement_end_time": st.session_state.truth_judgement_end_time})
-    st.switch_page("memory_experiment_2/pages/demographics_page.py")
+    st.switch_page("memory_experiment_3/pages/demographics_page.py")
 
 if show_next:
     if user_response is None:

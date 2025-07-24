@@ -110,7 +110,7 @@ if not user:
                     user = user_repository.get_user(target_id)
                     st.session_state.user = list(user)
                     user_repository.assign_to_weakest_group(st.session_state.user_id, user[1])
-                    st.switch_page("memory_experiment_2/pages/Experiment_description_page.py")
+                    st.switch_page("memory_experiment_3/pages/Experiment_description_page.py")
                 else:
                     st.error("Captcha is incorrect. Please try again.")
             if st.button("Generate new Captcha"):
@@ -123,16 +123,16 @@ else:
     user_repository.increase_login_attempts(target_id)
     print(checkpoint)
     if checkpoint[0] == 1:
-        st.switch_page("memory_experiment_2/pages/presentation_page.py")
+        st.switch_page("memory_experiment_3/pages/presentation_page.py")
     elif checkpoint[0] == 2:
-        st.switch_page("memory_experiment_2/pages/distractor_page.py")
+        st.switch_page("memory_experiment_3/pages/distractor_page.py")
     elif checkpoint[0] == 3:
-        st.switch_page("memory_experiment_2/pages/recall_page.py")
+        st.switch_page("memory_experiment_3/pages/recall_page.py")
     elif checkpoint[0] == 4:
-        st.switch_page("memory_experiment_2/pages/recognition_page.py")
+        st.switch_page("memory_experiment_3/pages/recognition_page.py")
     elif checkpoint[0] == 5:
-        st.switch_page("memory_experiment_2/pages/truthjudgement_page.py")
+        st.switch_page("memory_experiment_3/pages/truthjudgement_page.py")
     elif checkpoint[0] == 6:
-        st.switch_page("memory_experiment_2/pages/demographics_page.py")
+        st.switch_page("memory_experiment_3/pages/demographics_page.py")
     elif checkpoint[0] == 7:
-        st.switch_page("memory_experiment_2/pages/thank_you_page.py")
+        st.switch_page("memory_experiment_3/pages/thank_you_page.py")

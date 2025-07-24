@@ -126,43 +126,43 @@ if st.session_state.user_id == "":
         "core/pages/authentication_page_experiments.py", title="Log In", icon="🎟️", url_path="authentication_experiments", default=True
     )
     informed_consent_page = st.Page(
-        "memory_experiment_2/pages/informed_consent_page.py", title="Memory Experiment", icon="🧠", url_path="informed_consent",default=False
+        "memory_experiment_3/pages/informed_consent_page.py", title="Memory Experiment", icon="🧠", url_path="informed_consent",default=False
     )
 else:
     informed_consent_page = st.Page(
-        "memory_experiment_2/pages/informed_consent_page.py", title="Memory Experiment", icon="🧠", url_path="informed_consent",default=True
+        "memory_experiment_3/pages/informed_consent_page.py", title="Memory Experiment", icon="🧠", url_path="informed_consent",default=True
     )
 
 presentation_page = st.Page(
-    "memory_experiment_2/pages/presentation_page.py", title="Presentation Phase", icon="🧠", url_path="presentation_phase"
+    "memory_experiment_3/pages/presentation_page.py", title="Presentation Phase", icon="🧠", url_path="presentation_phase"
 )
 
 recall_page = st.Page(
-    "memory_experiment_2/pages/recall_page.py", title="Recall", icon="🔍", url_path="recall_phase"
+    "memory_experiment_3/pages/recall_page.py", title="Recall", icon="🔍", url_path="recall_phase"
 )
 
 recognition_page = st.Page(
-    "memory_experiment_2/pages/recognition_page.py", title="Recognition", icon="🔍", url_path="recognition_phase"
+    "memory_experiment_3/pages/recognition_page.py", title="Recognition", icon="🔍", url_path="recognition_phase"
 )
 
 truthjudgement_page = st.Page(
-    "memory_experiment_2/pages/truthjudgement_page.py", title="Credibility", icon="🔍", url_path="credibility_phase"
+    "memory_experiment_3/pages/truthjudgement_page.py", title="Credibility", icon="🔍", url_path="credibility_phase"
 )
 
 demographics_page = st.Page(
-    "memory_experiment_2/pages/demographics_page.py", title="demographics", icon="🔍", url_path="demographics_info"
+    "memory_experiment_3/pages/demographics_page.py", title="demographics", icon="🔍", url_path="demographics_info"
 )
 
 distractor_page = st.Page(
-    "memory_experiment_2/pages/distractor_page.py", title="Distractor", icon="🔍", url_path="distractor_phase"
+    "memory_experiment_3/pages/distractor_page.py", title="Distractor", icon="🔍", url_path="distractor_phase"
 )
 
 thank_you_page = st.Page(
-    "memory_experiment_2/pages/thank_you_page.py", title="Thank You", icon="🔍", url_path="thank_you"
+    "memory_experiment_3/pages/thank_you_page.py", title="Thank You", icon="🔍", url_path="thank_you"
 )
 
 experiment_description_page = st.Page(
-    "memory_experiment_2/pages/Experiment_description_page.py", title="Experiment Description", icon="🔍", url_path="experiment_description"
+    "memory_experiment_3/pages/Experiment_description_page.py", title="Experiment Description", icon="🔍", url_path="experiment_description"
 )
 # Create navigation bar
 
@@ -200,12 +200,12 @@ elif st.session_state.user_id:
     elif utils.authenticate_id("eval_ending_task", st.session_state.user_id):
         available_pages["Story Interpretation Task"] = [eval_ending_start_page, eval_ending_qualification_page, eval_ending_annotation_page]
 
-    elif utils.authenticate_id("memory_experiment_2", st.session_state.user_id):
+    elif utils.authenticate_id("memory_experiment_3", st.session_state.user_id):
         available_pages["Memory Experiment"] = [informed_consent_page, experiment_description_page, presentation_page, recall_page, recognition_page, truthjudgement_page, demographics_page, distractor_page, thank_you_page]
 
     available_pages["Other"] = [logout_page]
 
-    if utils.authenticate_id("memory_experiment_2", st.session_state.user_id):
+    if utils.authenticate_id("memory_experiment_3", st.session_state.user_id):
         pg = st.navigation(available_pages["Memory Experiment"], position="hidden")
     else:
         pg = st.navigation(available_pages)

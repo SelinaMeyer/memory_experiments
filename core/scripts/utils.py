@@ -49,8 +49,8 @@ TASK_INFO = {
         "group_assignment": "post-qualification"
     },
 
-    "memory_experiment_2": {
-        "annotation_filepath": "memory_experiment_2/resources/headlines.json",
+    "memory_experiment_3": {
+        "annotation_filepath": "memory_experiment_3/resources/headlines.json",
         "number_of_annotator_groups": 2,
     }
 }

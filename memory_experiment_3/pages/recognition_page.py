@@ -43,7 +43,7 @@ st.html("""<p>Below, you will again see some news headlines on the screen, one a
          <p>For each headline, please indicate whether it is a headline you have seen in the initial memorization task or a new headline you have not seen in the memorization task.""")
 
 user_repository.set_progress(st.session_state.user_id, 4)
-samples = read_json_from_file(TASK_INFO["memory_experiment_2"]["annotation_filepath"])
+samples = read_json_from_file(TASK_INFO["memory_experiment_3"]["annotation_filepath"])
 sample_response = {}
 print(st.session_state)
 shuffled_keys, index = user_repository.get_item_progress("recognition_keys", st.session_state.user_id)
@@ -60,7 +60,7 @@ if "shuffled_keys_recognition" not in st.session_state:
 if st.session_state.index < len(st.session_state.shuffled_keys_recognition):
     print("In Fragment!")
     key = st.session_state.shuffled_keys_recognition[st.session_state.index]
-    st.image(f"memory_experiment_2/resources/imgs/{key}.png")
+    st.image(f"memory_experiment_3/resources/imgs_humans/{key}.png")
     user_response = st.radio("Have you seen the headline above before?", ["Yes, this was shown to me in the initial task", "No, this headline is new"], 
                             index=None, 
                             key=st.session_state.index)
@@ -68,7 +68,7 @@ if st.session_state.index < len(st.session_state.shuffled_keys_recognition):
 else:
     st.session_state.recognition_end_time = time.time()
     user_repository.update_demographics(st.session_state.user_id, {"recognition_end_time": st.session_state.recognition_end_time})
-    st.switch_page("memory_experiment_2/pages/truthjudgement_page.py")
+    st.switch_page("memory_experiment_3/pages/truthjudgement_page.py")
 
 if show_next:
     if user_response is None:
