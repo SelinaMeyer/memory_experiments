@@ -50,7 +50,7 @@ TASK_INFO = {
     },
 
     "memory_experiment_3": {
-        "annotation_filepath": "memory_experiment_3/resources/headlines.json",
+        "annotation_filepath": "memory_experiment_3/resources/headlines_humans.json",
         "number_of_annotator_groups": 2,
     }
 }
