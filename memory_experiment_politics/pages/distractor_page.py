@@ -62,6 +62,6 @@ def distraction():
         st.segmented_control(label="What's your ideal night out?",
             options=[1,2,3,4],label_visibility="hidden", key="distractor_radio4")
     elif time.time() - st.session_state.get("distractor_timer") >= 60:
-        st.switch_page("memory_experiment_3/pages/recall_page.py")
+        st.switch_page("memory_experiment_politics/pages/recall_page.py")
 
 distraction()

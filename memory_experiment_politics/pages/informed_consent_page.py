@@ -56,7 +56,7 @@ if not user:
                     The goal of this study is to explore to which extent certain linguistic features affect memorability and truthfulness judgements of news headlines. 
                     <br>Your participation will help us achieve this goal. The results of this research and collected data may be presented at scientific or professional meetings or published in scientific proceedings and journals. 
 <h2>2. Participation and Compensation
-<p>Your participation in this online study is completely voluntary. You will be one of approximately 60 people being surveyed for this research. You will receive 4.6 GBP as compensation for your participation. 
+<p>Your participation in this online study is completely voluntary. You will be one of approximately 120 people being surveyed for this research. You will receive 4.6 GBP as compensation for your participation. 
                     <br>You may withdraw and discontinue participation at any time without penalty or losing the compensation. 
 <h2>3. Procedure
 <p>In this study, your initial task will be to read and memorize news headlines. 
