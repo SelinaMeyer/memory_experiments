@@ -1,0 +1,74 @@
+{
+	"1": {
+		"headline": "AI bigwigs want to go all-in on nuclear. They also happen to be behind nuclear companies",
+		"grouping": 0,
+		"presentation_grouping": [0,1],
+		"topic": "entertainment",
+        "source": "CNN",
+        "contains_pronoun": 0,
+        "avg_word_length": 6.43,
+        "perc_long_words": 0.36,
+        "num_long_words": 5
+	},
+	"2": {
+		"headline": "This study says having good cardio in your middle ages may reduce your risk of Alzheimer's and dementia.",
+		"grouping": 0,
+		"presentation_grouping": [0,1],
+		"topic": "entertainment",
+        "source": "CNN",
+        "contains_pronoun": 0,
+        "avg_word_length": 6.43,
+        "perc_long_words": 0.36,
+        "num_long_words": 5
+	},
+	"4": {
+		"headline": "The UK thinks weight loss drugs could ease unemployment. Experts say that’s a fantasy",
+		"grouping": 1,
+		"presentation_grouping": [0,1],
+		"topic": "entertainment",
+        "source": "CNN",
+        "contains_pronoun": 0,
+        "avg_word_length": 6.43,
+        "perc_long_words": 0.36,
+        "num_long_words": 5
+	},
+	"5": {
+		"headline": "Trump’s energy plan is \"drill, baby, drill.\" But it won’t be that easy for him.",
+		"grouping": 1,
+		"presentation_grouping": [0,1],
+		"topic": "entertainment",
+        "source": "CNN",
+        "contains_pronoun": 0,
+        "avg_word_length": 6.43,
+        "perc_long_words": 0.36,
+        "num_long_words": 5
+	},
+ 	"49": {
+        "headline": "This is an attention test. Please select \"Yes, I have seen this before\".",
+        "grouping": 4,
+        "presentation_grouping": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "topic": "distraction",
+        "source": "none",
+        "version": "none",
+        "sample_id": 0
+    },
+    "50": {
+        "headline": "This is an attention test. Please select 4.",
+        "grouping": 5,
+        "presentation_grouping": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "topic": "distraction",
+        "source": "none",
+        "version": "none",
+        "sample_id": 0
+    }
+}
