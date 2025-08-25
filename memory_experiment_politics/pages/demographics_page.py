@@ -47,7 +47,7 @@ political_labels = {
 demographics = {}
 user_repository.set_progress(st.session_state.user_id, 6)
 st.write("Below, we ask you to provide some demographic information about yourself. If you do not feel comfortable answering a question, you can leave the field empty.")
-with st.form("Please provide the following information about yourself:"):
+with st.form("Please provide the following information about yourself:", enter_to_submit=False):
     age = st.number_input("How old are you?", min_value=0, max_value=100, key="age", placeholder=0)
     gender = st.radio("How do you describe your current gender identity?", ["Man", "Woman",
                                                                              "Non-binary", "Prefer to self-describe"],index=None, key="gender")
@@ -81,6 +81,7 @@ with st.form("Please provide the following information about yourself:"):
     study_description = st.text_area("Please describe in one or two sentences what this study was about, in your own opinion:", key="study_description", height=100)
     further_comments = st.text_area("If you have any further comments on the study, please feel free to provide them here:", key="further_comments", height=100)
     submitted = st.form_submit_button("Submit")
+    
 if submitted:
     demographics["age"] = age
     demographics["gender"] = self_gender if gender == "Prefer to self-describe" else gender
