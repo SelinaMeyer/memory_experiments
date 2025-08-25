@@ -40,7 +40,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.html("""<p>Below you will see some news headlines on the screen one after the other. 
          <p>For each headline, please indicate how false or true you personally think it is (scale from 1=false to 7=true).""")
 user_repository.set_progress(st.session_state.user_id, 5)
-samples = read_json_from_file(TASK_INFO["memory_experiment_3"]["annotation_filepath"])
+samples = read_json_from_file(TASK_INFO["memory_experiment_politics"]["annotation_filepath"])
 sample_response = {}
 progression_data = {}
 shuffled_keys, index = user_repository.get_item_progress("credibility_keys", st.session_state.user_id)
