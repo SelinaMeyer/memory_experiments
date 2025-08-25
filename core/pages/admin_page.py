@@ -34,10 +34,13 @@ generation_option = st.selectbox(
      "For which task to generate new users?", TASK_OPTIONS)
 
 if generation_option and generation_option != "None selected":
-    generation_slider = st.select_slider("How many IDs to generate per group", options=(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+    generation_slider = st.select_slider("How many IDs to generate", options=list(range(150)))
+    groups_to_generate = st.selectbox(
+        "For which groups to generate that many new users?", ["ALL"] + list(range(utils.TASK_INFO[generation_option]["number_of_annotator_groups"]))
+    )
     generation_button = st.button("Click here to generate users")
     if generation_button:
-        admin_functions.generate_users(generation_option, generation_slider)
+        admin_functions.generate_users(generation_option, generation_slider, groups_to_generate)
 
 st.markdown("""
             ---
@@ -77,6 +80,8 @@ if danger_on:
         st.write("OK :( Deleting")
         admin_functions.reset_database()
         st.write("Done. Please refresh the page.")
+
+
 
 
 
