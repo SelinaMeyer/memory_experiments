@@ -209,6 +209,21 @@ pol_experiment_description_page = st.Page(
     "memory_experiment_politics/pages/Experiment_description_page.py", title="Experiment Description", icon="🔍", url_path="experiment_description"
 )
 # Create navigation bar
+change_detection_description_page = st.Page(
+    "change_detection_task/pages/Experiment_description_page.py", title="Experiment Description", icon="🧠", url_path="experiment_description"
+)
+change_detection_presentation_page = st.Page(
+    "change_detection_task/pages/presentation_page.py", title="Presentation Phase", icon="🧠", url_path="presentation_phase"
+)
+change_detection_distractor_page = st.Page(
+    "change_detection_task/pages/distractor_page.py", title="Distractor", icon="🔍", url_path="distractor_phase"
+)
+change_detection_recognition_page = st.Page(
+    "change_detection_task/pages/recognition_page.py", title="Recognition", icon="🔍", url_path="recognition_phase"
+)
+change_detection_thank_you_page = st.Page(
+    "change_detection_task/pages/thank_you_page.py", title="Thank You", icon="🔍", url_path="thank_you"
+)
 
 if st.session_state.user_id == "admin":
     pg = st.navigation(
@@ -251,18 +266,23 @@ elif st.session_state.user_id:
     elif utils.authenticate_id("memory_experiment_politics", st.session_state.user_id):
         available_pages["Memory Experiment"] = [pol_informed_consent_page, pol_experiment_description_page, pol_presentation_page, pol_recall_page, pol_recognition_page, pol_truthjudgement_page, pol_demographics_page, pol_distractor_page, pol_thank_you_page]
 
+    elif utils.authenticate_id("change_detection_task", st.session_state.user_id):
+        available_pages["Change Detection Task"] = [change_detection_description_page, change_detection_presentation_page, change_detection_distractor_page,
+                                                    change_detection_recognition_page, change_detection_thank_you_page]
     available_pages["Other"] = [logout_page]
 
     if utils.authenticate_id("memory_experiment_3", st.session_state.user_id):
         pg = st.navigation(available_pages["Memory Experiment"], position="hidden")
     elif utils.authenticate_id("memory_experiment_politics", st.session_state.user_id):
         pg = st.navigation(available_pages["Memory Experiment"], position="hidden")
+    elif utils.authenticate_id("change_detection_task", st.session_state.user_id):
+        pg = st.navigation(available_pages["Change Detection Task"], position="hidden")
     else:
         pg = st.navigation(available_pages)
         
 
 else:
-    pg = st.navigation([authentication_page_experiments])
+    pg = st.navigation([change_detection_description_page])
 try:
     pg.run()
 except (psycopg2.InterfaceError, psycopg2.OperationalError) as e:

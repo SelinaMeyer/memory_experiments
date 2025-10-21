@@ -56,7 +56,11 @@ TASK_INFO = {
     "memory_experiment_politics": {
         "annotation_filepath": "memory_experiment_politics/resources/headlines.json",
         "number_of_annotator_groups": 4,
-    }
+    },
+    "change_detection_task": {
+        "annotation_filepath": "change_detection_task/resources/headlines_reduced.json",
+        "number_of_annotator_groups": 1,
+    },
 }
 
 def read_json_from_file(path: str) -> dict:
