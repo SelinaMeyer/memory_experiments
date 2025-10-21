@@ -278,7 +278,7 @@ elif st.session_state.user_id:
     elif utils.authenticate_id("change_detection_task", st.session_state.user_id):
         pg = st.navigation(available_pages["Change Detection Task"], position="hidden")
     else:
-        pg = st.navigation(available_pages)
+        pg = st.navigation(available_pages["Change Detection Task"])
         
 
 else:

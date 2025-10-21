@@ -35,7 +35,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 st.html("""<p>Im Folgenden siehst du 16 englischsprachige Nachrichtenüberschriften für jeweils 10 Sekunden.</p>
         <p>Präge dir diese Überschriften so gut wie möglich ein. Im Anschluss kannst du deine Gedächtnisleistung mit der eines großen Sprachmodells (LLM) messen.</p>
-        <p>Drücke auf den Button unten, um mit dem Experiment zu beginnen.</""")
+        <p>Drücke auf den Button unten, um mit dem Experiment zu beginnen.""")
 
 if st.button("Ich bin bereit", key="start_experiment_button"):
     st.switch_page("change_detection_task/pages/presentation_page.py")
