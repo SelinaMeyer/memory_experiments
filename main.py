@@ -266,7 +266,7 @@ elif st.session_state.user_id:
     elif utils.authenticate_id("memory_experiment_politics", st.session_state.user_id):
         available_pages["Memory Experiment"] = [pol_informed_consent_page, pol_experiment_description_page, pol_presentation_page, pol_recall_page, pol_recognition_page, pol_truthjudgement_page, pol_demographics_page, pol_distractor_page, pol_thank_you_page]
 
-    elif utils.authenticate_id("change_detection_task", st.session_state.user_id):
+    else:
         available_pages["Change Detection Task"] = [change_detection_description_page, change_detection_presentation_page, change_detection_distractor_page,
                                                     change_detection_recognition_page, change_detection_thank_you_page]
     available_pages["Other"] = [logout_page]
@@ -278,7 +278,7 @@ elif st.session_state.user_id:
     elif utils.authenticate_id("change_detection_task", st.session_state.user_id):
         pg = st.navigation(available_pages["Change Detection Task"], position="hidden")
     else:
-        pg = st.navigation(available_pages["Change Detection Task"])
+        pg = st.navigation(available_pages)
         
 
 else:
