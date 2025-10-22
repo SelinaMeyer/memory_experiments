@@ -270,23 +270,19 @@ elif st.session_state.user_id:
     else:
         available_pages["Change Detection Task"] = [change_detection_description_page, change_detection_presentation_page, change_detection_distractor_page,
                                                     change_detection_recognition_page, change_detection_thank_you_page]
-        if st.session_state.user_id == "":
-            st.session_state.user_id = 'CHANGE_TASK_'+''.join(random.choice('123456789ABCDEFG') for _ in range(5))
-            user_repository.create_user(st.session_state.user_id, task="change_detection_task", data={"prolific_id": st.session_state.user_id})
     available_pages["Other"] = [logout_page]
 
     if utils.authenticate_id("memory_experiment_3", st.session_state.user_id):
         pg = st.navigation(available_pages["Memory Experiment"], position="hidden")
     elif utils.authenticate_id("memory_experiment_politics", st.session_state.user_id):
         pg = st.navigation(available_pages["Memory Experiment"], position="hidden")
-    elif utils.authenticate_id("change_detection_task", st.session_state.user_id):
-        pg = st.navigation(available_pages["Change Detection Task"], position="hidden")
     else:
-        pg = st.navigation(available_pages)
+        pg = st.navigation(available_pages["Change Detection Task"], position="hidden")
         
 
 else:
-    pg = st.navigation([change_detection_description_page])
+    pg = st.navigation([change_detection_description_page, change_detection_presentation_page, change_detection_distractor_page,
+                                                    change_detection_recognition_page, change_detection_thank_you_page], position="hidden")
 try:
     pg.run()
 except (psycopg2.InterfaceError, psycopg2.OperationalError) as e:

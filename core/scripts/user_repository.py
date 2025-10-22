@@ -38,7 +38,10 @@ def create_user(user_id: str, task: str = "ambiguity_task", data: dict = {}):
     # find annotator group
     cursor.execute("SELECT * from valid_ids WHERE user_id=%s", (user_id,))
     id_data = cursor.fetchone()
-    annotator_group = id_data[2]
+    if task=="change_detection_task":
+        annotator_group = 0  # all users in one group for change detection task
+    else:
+        annotator_group = id_data[2]
 
     data = json.dumps(data)
 

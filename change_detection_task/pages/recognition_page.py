@@ -45,12 +45,13 @@ st.html("""<p>Unten siehst du jetzt erneut Nachrichtenüberschriften.</p>
 user_repository.set_progress(st.session_state.user_id, 4)
 samples = read_json_from_file(TASK_INFO["change_detection_task"]["annotation_filepath"])
 sample_response = {}
+next_visibility = True
 print(st.session_state)
 shuffled_keys, index = user_repository.get_item_progress("recognition_keys", st.session_state.user_id)
 print(shuffled_keys, index)
 if "shuffled_keys_recognition" not in st.session_state:
     if not shuffled_keys:
-        shuffled_keys = [key for key, value in samples.items() if st.session_state.user[3] in value["presentation_grouping"]]
+        shuffled_keys = [key for key, value in samples.items() if st.session_state.user[3] == value["presentation_grouping"]]
         index = 0
         random.shuffle(shuffled_keys)
     st.session_state.shuffled_keys_recognition = shuffled_keys
@@ -58,7 +59,7 @@ if "shuffled_keys_recognition" not in st.session_state:
     st.session_state.index = index
 
 if st.session_state.index < len(st.session_state.shuffled_keys_recognition):
-    print("In Fragment!")
+    print(f"In Fragment! Current index: {st.session_state.index}")
     key = st.session_state.shuffled_keys_recognition[st.session_state.index]
     st.image(f"change_detection_task/resources/imgs/{key}.png")
     user_response = st.radio("Hast du genau diese Überschrift schon gesehen?", ["Ja, die Überschrift wurde mir am Anfang gezeigt", "Nein, diese Überschrift wurde mir nicht gezeigt/wurde verändert"], 
@@ -81,7 +82,7 @@ if show_next:
         sample_response["headline"] = samples[key]["headline"]
         print("key:", key)
         print("response:", user_response)
-        user_repository.save_one_annotation(st.session_state.user_id, "recognition", int(key), sample_response)
+        #user_repository.save_one_annotation(st.session_state.user_id, "recognition", int(key), sample_response)
         if sample_response["recognized_by_user"] == sample_response["seen_in_presentation"]:
             st.html("&#9989; Das war richtig!")
             if "correct_answer_count" not in st.session_state:
@@ -101,13 +102,16 @@ if show_next:
                 "<p>Hat unsere KI richtig geantwortet?</p>"
                 "<p>Die KI hat die Überschrift als "
                 f"<b>{'gesehen' if samples[key]['llama_response']=="yes" else 'nicht gesehen'}</b> klassifiziert.</p>")
-        if st.button("Zur nächsten Überschrift", key="load_next_recognition_sample_button"):
-            st.session_state.index += 1
-            progression_data["recognition_keys"] = st.session_state.shuffled_keys_recognition
-            progression_data["index"] = st.session_state.index
-            progression_data["correct_count"] = st.session_state.correct_answer_count if "correct_answer_count" in st.session_state else 0
-            user_repository.update_demographics(st.session_state.user_id, progression_data)
-            #key = st.session_state.shuffled_keys[st.session_state.index]
-            #placeholder.write(samples[key]["headline"])
-            print("Rerunning with new index", st.session_state.index)
-            st.rerun()
+        next_visibility = False
+go_to_next = st.button("Zur nächsten Überschrift", key="go_to_next_recognition_sample_button",disabled=next_visibility)
+if go_to_next:
+    st.session_state.index += 1
+    print("New index: ",index)
+    progression_data["recognition_keys"] = st.session_state.shuffled_keys_recognition
+    progression_data["index"] = st.session_state.index
+    progression_data["correct_count"] = st.session_state.correct_answer_count if "correct_answer_count" in st.session_state else 0
+    user_repository.update_demographics(st.session_state.user_id, progression_data)
+    #key = st.session_state.shuffled_keys[st.session_state.index]
+    #placeholder.write(samples[key]["headline"])
+    print("Rerunning with new index", st.session_state.index)
+    st.rerun()
