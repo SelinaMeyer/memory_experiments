@@ -38,4 +38,4 @@ st.html("""<p>Im Folgenden siehst du 16 englischsprachige Nachrichtenüberschrif
         <p>Drücke auf den Button unten, um mit dem Experiment zu beginnen.""")
 
 if st.button("Ich bin bereit", key="start_experiment_button"):
-    st.switch_page("change_detection_task/pages/presentation_page.py")
+    st.switch_page("change_detection_task/pages/distractor_page.py")
