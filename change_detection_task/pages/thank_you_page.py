@@ -27,7 +27,12 @@ def auswertung():
         else:
             st.write("Unser Sprachmodell hat mehr Überschriften richtig eingeordnet als du. Aber keine Sorge, das ist ganz normal!")
             st.write("Das Sprachmodell hat 6 Überschriften richtig eingeordnet.")
-        st.html("<p><span color=blue>Als KI haben wir Llama3 8b verwendet.<br/> Dabei handelt es sich um ein relativ kleines LLM, das man auch lokal auf gängigen Computern laufen lassen kann.<br/>"
-        "Anstatt der Bilder, die du gesehen hast, haben wir Llama zwischen der Präsentation der Headlines und dem Gedächtnistest 4000 Zeichen einer Sherlock Holmes geschichte übergeben.</span></p>")
+        
+        with st.container(border=True):
+            st.html("<p><span color=blue>Als KI haben wir Llama3 8b verwendet.<br/> Dabei handelt es sich um ein relativ kleines LLM, das man auch lokal auf gängigen Computern laufen lassen kann.<br/>"
+        "Anstatt der Bilder, die du gesehen hast, haben wir Llama zwischen der Präsentation der Headlines und dem Gedächtnistest 4000 Zeichen einer Sherlock Holmes geschichte übergeben.</span>"
+        "Die Nachrichtenheadlines wurden aus dem Englischen übersetzt. Alle Änderungen an Headlines wurden durch verschiedene LLMs durchgeführt. " \
+        "Wir forschen daran, wie wir diese Techniken nutzen können um wahre Nachrichten so zu ändern, dass sie besser in Erinnerung bleiben, ohne dass der Inhalt verändert wird. " \
+        "Damit möchten wir den Einfluss von Misinformation und Fake News reduzieren.</p>")
 
 auswertung()
