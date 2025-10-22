@@ -92,7 +92,7 @@ if show_next:
         else:
             st.html("&#10060; Das war leider falsch.")
             if sample_response["seen_in_presentation"]:
-                st.html(f"Diese Überschrift wurde Ihnen am Anfang gezeigt.")
+                st.html(f"Diese Überschrift wurde dir am Anfang gezeigt.")
             else:
                 if sample_response["changed"]:
                     st.html("Diese Überschrift wurde verändert.")
