@@ -72,6 +72,7 @@ with st.empty():
         st.session_state.index += 1
         progression_data["presentation_keys"] = st.session_state.shuffled_keys_presentation
         progression_data["index"] = st.session_state.index
+        progression_data["task"] = "change_detection_task"
         print("shuffled_keys to save: ", st.session_state.shuffled_keys_presentation)
         user_repository.update_demographics(st.session_state.user_id, progression_data)
         print("In loop, presented samples: ", st.session_state.index)

@@ -1,6 +1,7 @@
 import os
 import json
 import sqlite3
+import numpy as np
 
 import streamlit as st
 
@@ -85,6 +86,15 @@ def update_demographics(user_id: str, new_data: dict):
     """, (json.dumps(existing_data), user_id))
     conn.commit()
     # conn.close()
+
+def get_mean_correct_answer_count_of_all_participants(current_user_id):
+    conn = st.session_state.conn
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT correct_count FROM user_data WHERE task = %s AND user_id != %s", ("change_detection_task", current_user_id))
+    result = cursor.fetchall()
+    mean_count = np.mean(result)
+    return mean_count
 
 def set_progress(user_id: str, prog: int):
     conn = st.session_state.conn

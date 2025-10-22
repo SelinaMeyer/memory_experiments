@@ -1,7 +1,8 @@
 import psycopg2
 import streamlit as st
+import random
 
-from core.scripts import database_repository, utils
+from core.scripts import database_repository, utils, user_repository
 
 if "user_id" not in st.session_state:
     st.session_state.user_id = ""
@@ -269,6 +270,9 @@ elif st.session_state.user_id:
     else:
         available_pages["Change Detection Task"] = [change_detection_description_page, change_detection_presentation_page, change_detection_distractor_page,
                                                     change_detection_recognition_page, change_detection_thank_you_page]
+        if st.session_state.user_id == "":
+            st.session_state.user_id = 'CHANGE_TASK_'+''.join(random.choice('123456789ABCDEFG') for _ in range(5))
+            user_repository.create_user(st.session_state.user_id, task="change_detection_task", data={"prolific_id": st.session_state.user_id})
     available_pages["Other"] = [logout_page]
 
     if utils.authenticate_id("memory_experiment_3", st.session_state.user_id):

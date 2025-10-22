@@ -105,6 +105,7 @@ if show_next:
             st.session_state.index += 1
             progression_data["recognition_keys"] = st.session_state.shuffled_keys_recognition
             progression_data["index"] = st.session_state.index
+            progression_data["correct_count"] = st.session_state.correct_answer_count if "correct_answer_count" in st.session_state else 0
             user_repository.update_demographics(st.session_state.user_id, progression_data)
             #key = st.session_state.shuffled_keys[st.session_state.index]
             #placeholder.write(samples[key]["headline"])
