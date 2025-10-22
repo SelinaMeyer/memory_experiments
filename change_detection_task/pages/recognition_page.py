@@ -106,7 +106,7 @@ if show_next:
 go_to_next = st.button("Zur nächsten Überschrift", key="go_to_next_recognition_sample_button",disabled=next_visibility)
 if go_to_next:
     st.session_state.index += 1
-    print("New index: ",index)
+    print("New index: ", index)
     progression_data["recognition_keys"] = st.session_state.shuffled_keys_recognition
     progression_data["index"] = st.session_state.index
     progression_data["correct_count"] = st.session_state.correct_answer_count if "correct_answer_count" in st.session_state else 0
