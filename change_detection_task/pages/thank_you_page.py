@@ -20,7 +20,7 @@ dat_df = pd.DataFrame.from_dict(dat)
 if st.session_state.get("ending_timer") not in st.session_state:
         st.session_state.ending_timer = time.time()
 
-st.fragment(run_every=1)
+@st.fragment(run_every=1)
 def auswertung():
     if time.time() - st.session_state.get("ending_timer") < 5:
         st.write("Wie hat die KI im Vergleich abgeschnitten?")
