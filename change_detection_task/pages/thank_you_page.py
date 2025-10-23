@@ -27,16 +27,21 @@ time.sleep(2)
 
 if st.session_state.correct_answer_count == 6:  
     st.write("Das Sprachmodell hat 6 Überschriften richtig eingeordnet.")
+    time.sleep(0.5)
     st.html("<h3>Glückwunsch! Dein Gedächtnis ist genauso gut, wie das unseres Sprachmodells!</h3>")
+    time.sleep(0.5)
     st.balloons()
     st.balloons()
 elif st.session_state.correct_answer_count > 6:
-    st.balloons()
-    st.balloons()
     st.write("Das Sprachmodell hat 6 Überschriften richtig eingeordnet.")
+    time.sleep(0.5)
     st.html("<h3>Wow! Dein Gedächtnis ist sogar besser als das unseres Sprachmodells!</h3>")
+    time.sleep(0.5)
+    st.balloons()
+    st.balloons()
 else:
     st.write("Das Sprachmodell hat 6 Überschriften richtig eingeordnet.")
+    time.sleep(0.5)
     st.html("<h3>Unser Sprachmodell hat mehr Überschriften richtig eingeordnet als du. Aber keine Sorge, das ist ganz normal!</h3>")
 
 time.sleep(2)   
