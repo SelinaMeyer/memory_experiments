@@ -49,6 +49,8 @@ next_visibility = True
 print(st.session_state)
 shuffled_keys, index = user_repository.get_item_progress("recognition_keys", st.session_state.user_id)
 print(shuffled_keys, index)
+if "correct_answer_count" not in st.session_state:
+    st.session_state.correct_answer_count = 0
 if "shuffled_keys_recognition" not in st.session_state:
     if not shuffled_keys:
         shuffled_keys = [key for key, value in samples.items() if st.session_state.user[3] == value["presentation_grouping"]]
@@ -85,10 +87,7 @@ if show_next:
         #user_repository.save_one_annotation(st.session_state.user_id, "recognition", int(key), sample_response)
         if sample_response["recognized_by_user"] == sample_response["seen_in_presentation"]:
             st.html("&#9989; Das war richtig!")
-            if "correct_answer_count" not in st.session_state:
-                st.session_state.correct_answer_count = 1
-            else:
-                st.session_state.correct_answer_count += 1
+            st.session_state.correct_answer_count += 1
         else:
             st.html("&#10060; Das war leider falsch.")
             if sample_response["seen_in_presentation"]:
