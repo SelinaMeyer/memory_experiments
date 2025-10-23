@@ -2,6 +2,7 @@ import streamlit as st
 from core.scripts import user_repository
 import pandas as pd
 import time
+import altair as alt
 
 css = """
 .st-key-my_blue_container {
@@ -21,7 +22,22 @@ time.sleep(0.5)
 st.write("Wie hat die KI im Vergleich abgeschnitten?")
 with st.spinner():
     time.sleep(2)
-st.bar_chart(dat_df, stack=False, horizontal=True)
+#st.bar_chart(dat_df, stack=False, horizontal=True)
+
+chart = (
+    alt.Chart(dat_df)
+    .mark_bar()
+    .encode(
+        x=alt.X("variable:N", axis=alt.Axis(title=None)),  # "Du", "KI"
+        y=alt.Y("value:Q",
+                axis=alt.Axis(title=None, tickMinStep=1, tickCount=9, values=list(range(0, 9)))
+               ),
+        color="variable:N"
+    )
+    .properties(width=400, height=300)
+)
+
+st.altair_chart(chart, use_container_width=True)
 time.sleep(0.5)
 
 if st.session_state.correct_answer_count == 6:  
