@@ -41,10 +41,15 @@ else:
 
         
 with st.container(border=False, key="my_blue_container"):
-    st.html("<i>Ein paar zusätzliche Details:<i>")
-    st.html("<p>Als KI haben wir Llama3 8b verwendet. Dabei handelt es sich um ein relativ kleines LLM, das man auch lokal auf gängigen Computern laufen lassen kann.</p>"
-        "<p>Anstatt der Bilder, die du gesehen hast, haben wir Llama zwischen der Präsentation der Headlines und dem Gedächtnistest 4000 Zeichen einer Sherlock Holmes geschichte übergeben.</p>")
+    st.html("<i><b>Ein paar zusätzliche Details:</b></i>")
     st.html(
-        "<p>Die Nachrichtenüberschriften wurden aus dem Englischen übersetzt.</p><p>Alle Änderungen an Headlines wurden durch verschiedene LLMs durchgeführt.</p>" \
-        "<p>Wir forschen daran, wie wir diese Techniken nutzen können um wahre Nachrichten so zu ändern, das sie besser in Erinnerung bleiben, ohen dabei die Kernaussage zu verändern.</p>" \
-        "<p>Damit möchten wir den Einfluss von Misinformation und Fake News reduzieren.</p>")
+        "<p>Als KI haben wir <b>Llama3 8B</b> verwendet. Das ist ein relativ kompaktes Sprachmodell, das sogar auf vielen herkömmlichen Computern lokal laufen kann.</p>"
+        "<p>Im Vergleich zu größeren Modellen – wie denen, die hinter ChatGPT stecken – ist es zwar weniger leistungsfähig, dafür aber deutlich ressourcenschonender.</p>"
+        "<p>Statt der Bilder, die du gesehen hast, haben wir Llama zwischen der Präsentation der Headlines und dem Gedächtnistest <b>einen 4000 Zeichen langen Abschnitt aus einer Sherlock-Holmes-Geschichte</b> gezeigt.</p>"
+    )
+    st.html(
+        "<p>Die Nachrichtenüberschriften wurden aus dem Englischen übersetzt.</p>"
+        "<p>Alle Änderungen an den Headlines wurden von verschiedenen LLMs vorgenommen.</p>"
+        "<p>Wir untersuchen, wie sich solche Techniken nutzen lassen, um <b>wahre Nachrichten so anzupassen, dass sie besser im Gedächtnis bleiben</b> – ohne dabei die Kernaussage zu verändern.</p>"
+        "<p>Langfristig möchten wir so dazu beitragen, <b>den Einfluss von Fehlinformation und Fake News zu verringern</b>.</p>"
+    )
