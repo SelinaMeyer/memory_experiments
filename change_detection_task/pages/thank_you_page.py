@@ -15,7 +15,7 @@ st.html(f"<style>{css}</style>")
 user_repository.set_progress(st.session_state.user_id, 7)
 st.write(f"Du hast {st.session_state.correct_answer_count} von {len(st.session_state.shuffled_keys_recognition)} Überschriften richtig eingeordnet.")
 dat = {"Du":[st.session_state.correct_answer_count],
-       "KI": [6]}
+       "KI": [8]}
 dat_df = pd.DataFrame.from_dict(dat)
 
 time.sleep(2)
@@ -25,22 +25,22 @@ with st.spinner():
 st.bar_chart(dat_df, stack=False, horizontal=True, x_label="Anzahl der richtig eingeordneten Überschriften", y=["Du","KI"], y_label=None)
 time.sleep(2)
 
-if st.session_state.correct_answer_count == 6:  
-    st.write("Das Sprachmodell hat 6 Überschriften richtig eingeordnet.")
+if st.session_state.correct_answer_count == 8:  
+    st.write("Das Sprachmodell hat 8 Überschriften richtig eingeordnet.")
     time.sleep(0.5)
     st.html("<h3>Glückwunsch! Dein Gedächtnis ist genauso gut, wie das unseres Sprachmodells!</h3>")
     time.sleep(0.5)
     st.balloons()
     st.balloons()
-elif st.session_state.correct_answer_count > 6:
-    st.write("Das Sprachmodell hat 6 Überschriften richtig eingeordnet.")
+elif st.session_state.correct_answer_count > 8:
+    st.write("Das Sprachmodell hat 8 Überschriften richtig eingeordnet.")
     time.sleep(0.5)
     st.html("<h3>Wow! Dein Gedächtnis ist sogar besser als das unseres Sprachmodells!</h3>")
     time.sleep(0.5)
     st.balloons()
     st.balloons()
 else:
-    st.write("Das Sprachmodell hat 6 Überschriften richtig eingeordnet.")
+    st.write("Das Sprachmodell hat 8 Überschriften richtig eingeordnet.")
     time.sleep(0.5)
     st.html("<h3>Unser Sprachmodell hat mehr Überschriften richtig eingeordnet als du. Aber keine Sorge, das ist ganz normal!</h3>")
 
