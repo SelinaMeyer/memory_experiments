@@ -22,7 +22,7 @@ time.sleep(0.5)
 st.write("Wie hat die KI im Vergleich abgeschnitten?")
 with st.spinner():
     time.sleep(2)
-st.bar_chart(dat_df, stack=False, horizontal=True, x_label="Anzahl der richtig eingeordneten Überschriften", y_label="")
+st.bar_chart(dat_df, stack=False, horizontal=True, x_label="Anzahl der richtig eingeordneten Überschriften", y_label=" ", x=[0,1,2,3,4,5,6,7,8])
 time.sleep(0.5)
 
 if st.session_state.correct_answer_count == 6:  
