@@ -18,12 +18,12 @@ dat = {"Du":[st.session_state.correct_answer_count],
        "KI": [6]}
 dat_df = pd.DataFrame.from_dict(dat)
 
-time.sleep(1)
+time.sleep(2)
 st.write("Wie hat die KI im Vergleich abgeschnitten?")
 with st.spinner():
-    time.sleep(3)
+    time.sleep(5)
 st.bar_chart(dat_df, stack=False, horizontal=True, x_label="Anzahl der richtig eingeordneten Überschriften", y=["Du","KI"], y_label=None)
-time.sleep(1)
+time.sleep(2)
 
 if st.session_state.correct_answer_count == 6:  
     st.write("Das Sprachmodell hat 6 Überschriften richtig eingeordnet.")
@@ -39,8 +39,9 @@ else:
     st.write("Das Sprachmodell hat 6 Überschriften richtig eingeordnet.")
     st.html("<h3>Unser Sprachmodell hat mehr Überschriften richtig eingeordnet als du. Aber keine Sorge, das ist ganz normal!</h3>")
 
-        
-with st.container(border=True, key="my_blue_container"):
+time.sleep(2)   
+st.empty()     
+with st.container(border=False, key="my_blue_container"):
     st.html("<i><b>Ein paar zusätzliche Details:</b></i>")
     st.html(
         "<p>Als KI haben wir <b>Llama3 8B</b> verwendet. Das ist ein relativ kompaktes Sprachmodell, das sogar auf vielen herkömmlichen Computern lokal laufen kann.</p>"
