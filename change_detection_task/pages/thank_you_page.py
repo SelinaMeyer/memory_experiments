@@ -40,7 +40,7 @@ else:
     st.html("<h3>Unser Sprachmodell hat mehr Überschriften richtig eingeordnet als du. Aber keine Sorge, das ist ganz normal!</h3>")
 
         
-with st.container(border=False, key="my_blue_container"):
+with st.container(border=True, key="my_blue_container"):
     st.html("<i><b>Ein paar zusätzliche Details:</b></i>")
     st.html(
         "<p>Als KI haben wir <b>Llama3 8B</b> verwendet. Das ist ein relativ kompaktes Sprachmodell, das sogar auf vielen herkömmlichen Computern lokal laufen kann.</p>"
