@@ -18,12 +18,12 @@ dat = {"Du":[st.session_state.correct_answer_count],
        "KI": [6]}
 dat_df = pd.DataFrame.from_dict(dat)
 
-time.sleep(0.5)
+time.sleep(1)
 st.write("Wie hat die KI im Vergleich abgeschnitten?")
 with st.spinner():
-    time.sleep(2)
+    time.sleep(3)
 st.bar_chart(dat_df, stack=False, horizontal=True, x_label="Anzahl der richtig eingeordneten Überschriften", y=["Du","KI"], y_label=None)
-time.sleep(0.5)
+time.sleep(1)
 
 if st.session_state.correct_answer_count == 6:  
     st.write("Das Sprachmodell hat 6 Überschriften richtig eingeordnet.")
